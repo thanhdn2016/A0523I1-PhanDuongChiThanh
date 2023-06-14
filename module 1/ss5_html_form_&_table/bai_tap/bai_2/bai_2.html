@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bai_tap2-A0523I1-PhanDuongChiThanh</title> 
     
 </head>
 <body>
@@ -12,12 +12,149 @@
     <div>
         Please take a few moments to complete this satisfaction survey.
     </div>
-    <ul>
-        <li>
-            <label>
-            What is your age range?
-            </label>
-        </li>
-    </ul>
+    --------------------------------------------
+    <form action="test.html" method="get">
+        <div>
+      <strong><p>What is your age range?</p></strong>
+      <select style="width: 50%;" name="age">
+        <option selected>18-24</option>
+        <option>25-34</option>
+        <option>35-50</option>
+        <option>50+</option>
+      </select>
+        </div>
+        <div>
+            <strong><p>What is your yearly income range?</p></strong>
+            <select style="width: 50%;" name="income">
+                <option selected>$0 - $25,000</option>
+                <option>$25,001 - $50,000</option>
+                <option>$50,001 - $100,000</option>
+                <option>$100,000+</option>
+            </select>
+        </div>
+        <div>
+            <strong>
+                <p>Gender identity</p>
+            </strong>
+            <table>
+                <tr>
+                <td><input type="radio" name="gender"></td><td>Male</td>
+                </tr>
+                <tr>
+                <td><input type="radio" name="gender"></td><td>Female</td>
+                </tr>
+                <tr>
+                <td><input type="radio" name="gender"></td><td>Nonbinary</td>
+                </tr>
+                <tr>
+                <td><input type="radio" name="gender"></td><td>Other</td>
+                </tr>
+                <tr>
+                <td colspan="2">
+                <input type="text">
+                </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <strong>
+                <p>Which of the following products have your purchased in the last 2 months. Please check all that apply</p>
+            </strong>
+            <table>
+                <tr>
+                    <td><input type="checkbox"name="product"></td><td> Product 1</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"name="product"></td><td> Product 2</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"name="product"></td><td> Product 3</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <strong>
+                <p>How often would you use our new product?</p>
+            </strong>
+            <table>
+            <tr>
+                <td><input type="radio" name="often"></td><td>Daily</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="often"></td><td>Weekly</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="often"></td><td>Monthly</td>
+            </tr>
+            </table>
+        </div>
+        <div>
+            <strong>
+                <p>What would you pay for the new product?</p>
+            </strong>
+            <table>
+                <tr>
+                    <td>
+                        $
+                    </td>
+                    <td>
+                        <input type="number" style="width:80px" placeholder="Dollars">
+                    </td>
+                    <td>
+                        .
+                    </td>
+                    <td>
+                        <input type="number" style="width: 50px;" placeholder="Cents">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <strong>
+                <p>What features would you like to see in the new product.</p>
+            </strong>
+            <textarea name="textarea" cols="50" rows="5"></textarea>
+        </div>
+        <p>Please rate your level of agreement with the following statements.</p>
+        <div style="text-align: center;">
+            <table border="1px">
+                <tr>
+                    <th width="100px" style="background-color: rgba(237, 236, 232, 1);"></th>
+                    <th width="50px" style="background-color: rgba(237, 236, 232, 1);">Strongly Disagree</th>
+                    <th width="50px" style="background-color: rgba(237, 236, 232, 1);">Disagree</th>
+                    <th width="50px" style="background-color: rgba(237, 236, 232, 1);">Agree</th>
+                    <th width="50px" style="background-color: rgba(237, 236, 232, 1);">Strongly Agree</th>
+                </tr>
+                <tr>
+                    <td>
+                        Our products are priced fairly.
+                    </td>
+                    <td><input type="radio"name="price"><br>1</td>
+                    <td><input type="radio"name="price"><br>2</td>
+                    <td><input type="radio"name="price"><br>3</td>
+                    <td><input type="radio"name="price"><br>4</td>
+                </tr>
+                <tr>
+                    <td>
+                        Our products are high quality.
+                    </td>
+                    <td><input type="radio"name="quality"><br>1</td>
+                    <td><input type="radio"name="quality"><br>2</td>
+                    <td><input type="radio"name="quality"><br>3</td>
+                    <td><input type="radio"name="quality"><br>4</td>
+                </tr>
+                <tr>
+                    <td>You would recommend our product to a friend or coworker.</td>
+                    <td><input type="radio"name="rcm"><br>1</td>
+                    <td><input type="radio"name="rcm"><br>2</td>
+                    <td><input type="radio"name="rcm"><br>3</td>
+                    <td><input type="radio"name="rcm"><br>4</td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <input type="submit">
+    </form>
+
 </body>
 </html>
