@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input placeholder="nhap so thu 1" type="text" id="so1">
+        <input placeholder="nhap so thu 2" type="text" id="so2"><br>
+        <br>
+        <button onclick="cong()">Cong(+)</button>
+        <button onclick="tru()">Tru(-)</button>
+        <button onclick="nhan()">Nhan(*)</button>
+        <button onclick="chia()">Chia(/)</button>
+        <p id="result"></p>
+    <script>
+        function cong() {
+            var a = document.getElementById("so1").value;
+            var b = document.getElementById("so2").value;
+            var cong = parseInt(a) + parseInt(b);
+            document.getElementById("result").innerText = "Ket Qua Phep Cong La: " + cong;
+        }
+        function tru() {
+            var a = document.getElementById("so1").value;
+            var b = document.getElementById("so2").value;
+            var tru = parseInt(a) - parseInt(b);
+            document.getElementById("result").innerText = "Ket Qua Phep Tru La: " + tru;
+        }
+        function nhan() {
+            var a = document.getElementById("so1").value;
+            var b = document.getElementById("so2").value;
+            var nhan = parseInt(a) * parseInt(b);
+            document.getElementById("result").innerText = "Ket Qua Phep Nhan La: " + nhan;
+        }
+        function chia() {
+            var a = document.getElementById("so1").value;
+            var b = document.getElementById("so2").value;
+            var chia = parseInt(a) / parseInt(b);
+            document.getElementById("result").innerText = "Ket Qua Phep Chia La: " + chia;
+        }
+    </script>
+</body>
+</html>
