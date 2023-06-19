@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--bai 1-->
+    <p>Bai 1:Tính điểm trung bình và tổng điểm 3 môn</p>
+    <table>
+    <tr><td>Lý:</td> <td><input placeholder="nhập điểm Lý" id="ly"></td></tr>
+    <tr><td>Hoá:</td> <td><input placeholder="nhập điểm Hoá" id="hoa"></td></tr>
+    <tr><td>Sinh:</td> <td><input placeholder="nhập điểm Sinh" id="sinh"></td></tr>
+    </table>
+    <button onclick="sum()">Tổng</button>
+    <button onclick="average()">Trung Bình</button>
+    <p id="result"></p>
+    <p id="result2"></p>
+    
+    <script>
+        function sum() {
+            a = document.getElementById("ly").value;
+            b = document.getElementById("hoa").value;
+            c = document.getElementById("sinh").value;
+           let sum = parseInt(a) + parseInt(b) + parseInt(c); //khai bao bien "let"
+            document.getElementById("result").innerText = "Tổng điểm 3 môn là: " + sum;
+        }
+        function average() {
+            a = document.getElementById("ly").value;
+            b = document.getElementById("hoa").value;
+            c = document.getElementById("sinh").value;
+          let  average = (parseInt(a) + parseInt(b) + parseInt(c))/3; //khai bao bien
+            document.getElementById("result2").innerText = "Trung bình 3 môn là: " + average;
+        }
+    </script>
+    <!-- bai 2 -->
+    <p>Bai 2:Viết chương trình nhập một giá trị là độ 0C (Celsius) và chuyển nó sang độ 0F (Fahrenheit)</p>
+    <input placeholder="nhập độ C" type="text" name="Celsius" id="Celsius">
+    <button onclick="doi()">Chuyển Đổi</button>
+    <p id="ketqua"></p>
+    <script>
+        function doi() {
+            var d = document.getElementById("Celsius").value 
+           let doi = ((parseInt(d) * 1.8) + 32);
+            document.getElementById("ketqua").innerText = "Giá trị đã chuyển đổi từ độ C sang độ F là: " + doi;
+        }
+    </script>
+    <!-- bai 3 -->
+    <p>Bài 3: Viết chương trình tính diện tích hình tròn</p>
+    <input placeholder="nhập bán kính" type="text" name="R" id="R">
+    <button onclick="Stron()">Tính Diện Tích</button>
+    <p id="Shtron"></p>
+    <script>
+        function Stron() {
+            var e = document.getElementById("R").value;
+           let Stron = (parseInt(e)*parseInt(e)*3.14)
+            document.getElementById("Shtron").innerText = "Diện Tích Hình Tròn Là: " + Stron;
+        }
+    </script>
+    <!-- bai 4 -->
+    <p>Bài 4: Viết chương trình chu vi hình tròn</p>
+    <input placeholder="nhập bán kính" type="text" name="P" id="P">
+    <button onclick="Ptron()">Tính Chu Vi</button>
+    <p id="Phtron"></p>
+    <script>
+        function Ptron() {
+            var f = document.getElementById("P").value;
+          let  Ptron = (parseInt(f)*2*3.14);
+            document.getElementById("Phtron").innerText = "Chu Vi Hình Tròn Là: " + Ptron;
+        }
+    </script>
+</body>
+</html>
