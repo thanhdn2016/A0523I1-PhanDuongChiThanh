@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập cấu trúc điều kiện 1 bài 3</title>
+</head>
+<body>
+    <p>Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0</p>
+    Nhap vao so nguyen: <input type="text" id="z">
+    <button onclick="sosanh()">so sanh</button>
+    <p id="result"></p>
+    <p id="result2"></p>
+    <script>
+        function sosanh() {
+            var a = document.getElementById("z").value;
+             if (parseInt(a) > 0) {
+                document.getElementById("result").innerText = "Số bạn vừa nhập là: " + a ;
+                document.getElementById("result2").innerText = "Số bạn vừa nhập là số nguyên dương (lớn hơn 0) " ;
+            } else if (parseInt(a) < 0) {
+                document.getElementById("result").innerText = "Số bạn vừa nhập là: " + a ;
+                document.getElementById("result2").innerText = "Số bạn vừa nhập là số nguyên âm (nhỏ hơn 0)" ;
+            } else {
+            document.getElementById("result").innerText = "Số bạn vừa nhập là: " + a ;
+            document.getElementById("result2").innerText = "Số bạn vừa nhập là số 0" ;
+            }
+        }       
+    </script>
+</body>
+</html>
