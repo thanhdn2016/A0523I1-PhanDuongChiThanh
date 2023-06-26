@@ -20,15 +20,38 @@
     <h2>Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</h2>
     <table>
         <tr>
-         <td>nhap vao diem bai kiem tra</td>  <td><input type="text" id="test"> </td>
+            <td>nhap vao diem bai kiem tra</td>  <td><input type="text" id="test"> </td>
         </tr>
         <tr>
             <td>nhap vao diem thi giua ky </td> <td><input type="text" id="midTerm"></td>
         </tr>
         <tr>
-        <td>nhap vao diem thi cuoi ky</td> <td><input type="text" id="finalTest"></td> 
+            <td>nhap vao diem thi cuoi ky</td> <td><input type="text" id="finalTest"></td> 
     </tr>
     </table>
-    <button>Ket qua</button>
+    <button onclick="cal()">Ket qua</button>
+    <p id="result"></p>
+    <p id="result2"></p>
+    <script>
+        function cal() {
+            var test = +document.getElementById("test").value;
+            var midTerm = +document.getElementById("midTerm").value;
+            var finalTest = +document.getElementById("finalTest").value;
+            var average = (test + (midTerm * 2) + (finalTest * 3))/6
+            if (average >= 8) {
+                document.getElementById("result").innerText="Hoc Sinh Gioi";
+                document.getElementById("result2").innerText="Điểm trung bình tổng là: " + average;
+            } else if (6<=average<8) {
+                document.getElementById("result").innerText="Hoc Sinh Kha";
+                document.getElementById("result2").innerText="Điểm trung bình tổng là: " + average;
+            } else if (5<= average <6) {
+                document.getElementById("result").innerText="Hoc Sinh Trung Binh";
+                document.getElementById("result2").innerText="Điểm trung bình tổng là: " + average;
+            } else {
+                document.getElementById("result").innerText="Hoc Sinh Yeu";
+                document.getElementById("result2").innerText="Điểm trung bình tổng là: " + average;
+            }
+        }
+    </script>
 </body>
 </html>

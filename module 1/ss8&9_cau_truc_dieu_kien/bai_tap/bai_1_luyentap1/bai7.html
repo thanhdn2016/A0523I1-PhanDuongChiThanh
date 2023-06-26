@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập CTĐK 1 bài 7</title>
+</head>
+<body>
+    <h2>Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho</h2>
+    <input type="text" placeholder="Nhap so phut goi" id="phutGoi">
+<button onclick="tinhTienCuocGoi()">Tinh Tien</button>
+<p id="result"></p>
+
+<script>
+    function tinhTienCuocGoi() {
+        var phutGoi = document.getElementById('phutGoi').value;
+        var tongTien = 0;
+        if (phutGoi < 5) {
+            tongTien = phutGoi * 1000;
+        } else if (phutGoi < 10) {
+            tongTien = 5 * 1000 + (phutGoi - 5) * 8000;
+        } else {
+            tongTien = 5 * 1000 + 5 * 800 + (phutGoi - 10)*600;
+        }
+    document.getElementById("result").innerText="Tong tien la: " + tongTien + " Dong"
+    }
+</script>
+</body>
+</html>

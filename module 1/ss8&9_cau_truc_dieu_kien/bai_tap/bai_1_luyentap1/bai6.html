@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập CTĐK 1 bài 6</title>
+</head>
+<body>
+    <h2>Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</h2>
+    <input placeholder="nhap vao muc doanh so ban hang(trieu dong)" type="text" id="dsbh" style="width:300px;">
+    <!--doanh thu 50 triệu đồng thì sẽ hưởng 5% hoa hồng.
+        doanh thu từ 50-100 triệu đồng thì sẽ nhận được 7% hoa hồng
+        trên 100 triệu doanh thu thì sẽ nhận 10% hoa hồng -->
+        <button onclick="cal()">Ket qua</button>
+        <p id="result"></p>
+    <script>
+        function cal() {
+            var a = +document.getElementById("dsbh").value;
+            
+            if (100>=a>=50) {
+                a = a*7/100
+                document.getElementById("result").innerText="so hoa hong nhan duoc la: " +   a + " trieu dong";
+            } else if (a > 100) {
+                a = a*10/100
+                document.getElementById("result").innerText="so hoa hong nhan duoc la: " + a + " trieu dong";
+            } else if (a == 50 ) {
+                a = a*5/100
+                document.getElementById("result").innerText="so hoa hong nhan duoc la: " + a + " trieu dong";
+            } else {
+                document.getElementById("result").innerText="Khong co hoa hong de nhan";
+            }
+        }
+    </script>
+</body>
+</html>
