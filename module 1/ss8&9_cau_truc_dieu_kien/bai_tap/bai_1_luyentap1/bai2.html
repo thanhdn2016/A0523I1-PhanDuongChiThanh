@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- phan 2 -->
+   <p>Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.</p>
+   <input placeholder="Nhap tuoi cua ban" type="text" id="tuoi">
+   <button onclick="check()">Kiem tra</button>
+   <p id="result3"></p>
+   <script>
+       function check() {
+       var d = document.getElementById("tuoi").value
+       if (d >= 16) {
+           document.getElementById("result3").innerText="Bạn đã đủ điều kiện để vào học lớp 10";
+       } else {
+           document.getElementById("result3").innerText="Bạn không đủ điều kiện để vào học lớp 10";
+       }
+       }
+   </script>
+</body>
+</html>

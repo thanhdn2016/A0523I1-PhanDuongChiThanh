@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bài Chuyển Đổi Tiền Tệ</title>
 </head>
+<style>
+    button {
+        height: 40px; width: 120px; background-color: blueviolet; color: white;
+    }
+    select {
+        width: 150px;
+    }
+</style>
 <body>
-    <table>
+    <h1>Chuyển Đổi Tiền Tệ</h1>
+    <table cellspacing="20px">
         <tr>
             <td style="text-align: center;">Amount</td>
             <td style="text-align: center;">From Currency</td>
@@ -16,13 +25,34 @@
         <tr>
             <td><input type="text" name="amount" id="amount"></td>
             <td>
-                <select>
-                    <option>USD</option>
-                    <option>VND</option>
+                <select id="fromCur">
+                    <option value="USD">USD</option>
+                    <option value="VND">VND</option>
                 </select>
             </td>
+            <td>
+                <select id="toCur">
+                    <option value="USD">USD</option>
+                    <option value="VND">VND</option>
+                </select>
+            </td>
+            <td><button onclick="convert()">Convert</button></td>
+            <p id="result"></p>
         </tr>
     </table>
-    
+    <script>
+        function convert() {
+            var fromCur = document.getElementById("fromCur").value;
+            var toCur = document.getElementById("toCur").value;
+            var amount = document.getElementById("amount").value;
+            if (fromCur == "USD" && toCur == "VND") {
+                document.getElementById("result").innerText = "Kết Quả Là : " + amount*23000;
+            } else if (fromCur == "VND" && toCur == "USD") {
+                document.getElementById("result").innerText ="Kết Quả Là : " + amount / 23000;
+            } else {
+                document.getElementById("result").innerText ="Kết Quả Là : " + amount
+            }
+        }
+    </script>
 </body>
 </html>
