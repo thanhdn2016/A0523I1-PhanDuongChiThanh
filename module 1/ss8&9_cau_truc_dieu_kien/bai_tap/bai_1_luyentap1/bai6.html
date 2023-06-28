@@ -17,16 +17,15 @@
     <script>
         function cal() {
             var a = +document.getElementById("dsbh").value;
-            
-            if (100>=a>=50) {
+            if (100>= a && a >= 50) {
                 a = a*7/100
-                document.getElementById("result").innerText="so hoa hong nhan duoc la: " +   a + " trieu dong";
+                document.getElementById("result").innerText="so hoa hong nhan duoc la: " + a + " trieu dong (7%)";
             } else if (a > 100) {
                 a = a*10/100
-                document.getElementById("result").innerText="so hoa hong nhan duoc la: " + a + " trieu dong";
+                document.getElementById("result").innerText="so hoa hong nhan duoc la: " + a + " trieu dong (10%)";
             } else if (a == 50 ) {
                 a = a*5/100
-                document.getElementById("result").innerText="so hoa hong nhan duoc la: " + a + " trieu dong";
+                document.getElementById("result").innerText="so hoa hong nhan duoc la: " + a + " trieu dong (5%)";
             } else {
                 document.getElementById("result").innerText="Khong co hoa hong de nhan";
             }
