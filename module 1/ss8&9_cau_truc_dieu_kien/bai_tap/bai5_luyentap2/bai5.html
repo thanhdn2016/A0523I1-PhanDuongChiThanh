@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyen tap su dung cau truc dieu kien 2</title>
+</head>
+<body>
+    <h2>Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</h2>
+    <input type="text" placeholder="nhap vao canh ke a" id="a"><br><br>
+    <input type="text" placeholder="nhap vao canh ke b" id="b"><br><br>
+    <button onclick="s()">tinh dien tich</button>
+    <p id="result"></p>
+    <script>
+        function s() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var s = 1/2 * (a * b);
+            document.getElementById("result").innerText="dien tich hinh tam giac vuong la: " + s;
+        }
+    </script>
+</body>
+</html>

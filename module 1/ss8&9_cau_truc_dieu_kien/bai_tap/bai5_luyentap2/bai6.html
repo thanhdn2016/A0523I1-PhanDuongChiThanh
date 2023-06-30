@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyen tap su dung cau truc dieu kien 2</title>
+</head>
+<body>
+    <h2>Bài 6: Giải phương trình bậc 1.</h2>
+    <input type="text" placeholder="nhap vao a" id="a"><br><br>
+    <input type="text" placeholder="nhap vao b" id="b"><br><br>
+    <button onclick="nghiem()">tinh nghiem</button>
+    <p id="result"></p>
+<script>
+    function nghiem(){
+        var a = +document.getElementById("a").value;
+        var b = +document.getElementById("b").value;
+        var x = -b/a;
+        if (a==0 && b == 0) {
+            document.getElementById("result").innerText="Phuong trinh co vo so nghiem";
+        } else if (a==0 && b != 0) {
+            document.getElementById("result").innerText="Phuong trinh vo nghiem";
+        } else {
+            document.getElementById("result").innerText="Phuong trinh co 1 nghiem duy nhat la: " + x;
+        }
+    }
+</script>
+</body>
+</html>

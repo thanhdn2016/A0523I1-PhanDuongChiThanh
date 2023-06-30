@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyen tap su dung cau truc dieu kien 2</title>
+</head>
+<body>
+    <h2>Bài 10: Viết chương trình tính giá điện.</h2>
+    <input type="text" placeholder="nhap vao so chu dien" id="sodien">
+    <button onclick="cal()">Tinh Tien</button>
+    <p id="result"></p>
+    <script>
+        function cal() {
+            var a = +document.getElementById("sodien").value;
+            var b = 0;
+            if (a < 5) {
+            b = a * 3000;
+            document.getElementById("result").innerText="gia tien dien la: " + b;
+        } else if (a < 10) {
+            b = 5 * 3000 + (a - 5) * 2500;
+            document.getElementById("result").innerText="gia tien dien la: " + b;
+        } else {
+            b = 5 * 3000 + 5 * 2500 + (a - 10)*2000;
+            document.getElementById("result").innerText="gia tien dien la: " + b;
+        }
+        }
+    </script>
+</body>
+</html>

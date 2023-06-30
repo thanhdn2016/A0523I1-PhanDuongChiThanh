@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyen tap su dung cau truc dieu kien 2</title>
+</head>
+<body>
+    <h2>Bài 11: Viết chương trình tính thuế thu nhập cá nhân.</h2>
+   Tong Thu Nhap: <input type="text" id="tongthunhap"> 
+   So nguoi phu thuoc: <input type="text" id="phuthuoc">
+   <button onclick="tinh()">Ket Qua</button>
+   <p id="result"></p>
+   <p id="diengiai"></p>
+   <!-- Giảm trừ bản thân = 8.000.000
+
+Giảm trừ người phụ thuộc = 1 x 4.000.000 = 4.000.000 -->
+   <script>
+    function tinh() {
+        var thuNhap = +document.getElementById("tongthunhap").value;
+        var phuThuoc = +document.getElementById("phuthuoc").value;
+        if (thuNhap>=12000000 && thuNhap < 17000000) {
+            var thue = ((thuNhap - 8000000) - (phuThuoc * 3000000)) * 5/100;
+            if (thue > 0) {
+            document.getElementById("result").innerText="Thue TNCN phai nop la " + thue;
+            document.getElementById("diengiai").innerHTML=" <p>Dien Giai Cach Tinh Thue TNCN<p>   <p>Giảm trừ bản thân: 8,000,000</p>  <p>Giảm trừ người phụ thuộc = 1 x 4.000.000 = 4.000.000</p> ";
+            } else {
+                document.getElementById("result").innerText="Ban khong can dong thue TNCN ";    
+            }
+        } else if (thuNhap >= 17000000 && thuNhap < 30000000) {
+            var thue = ((thuNhap - 8000000) - (phuThuoc * 3000000)) * 7/100;
+            if (thue > 0) {
+            document.getElementById("result").innerText="Thue TNCN phai nop la " + thue;
+            document.getElementById("diengiai").innerHTML=" <p>Dien Giai Cach Tinh Thue TNCN<p>  <p>Giảm trừ bản thân: 8,000,000</p>  <p>Giảm trừ người phụ thuộc = 1 x 4.000.000 = 4.000.000</p> ";
+            } else {
+                document.getElementById("result").innerText="Ban khong can dong thue TNCN ";    
+            }
+        } else if (thuNhap>=30000000) {
+            var thue = ((thuNhap - 8000000) - (phuThuoc * 3000000)) * 10/100;
+            if (thue > 0) {
+            document.getElementById("result").innerText="Thue TNCN phai nop la " + thue;
+            document.getElementById("diengiai").innerHTML=" <p>Dien Giai Cach Tinh Thue TNCN<p>  <p>Giảm trừ bản thân: 8,000,000</p> <p>Giảm trừ người phụ thuộc = 1 x 4.000.000 = 4.000.000</p> ";
+            } else {
+                document.getElementById("result").innerText="Ban khong can dong thue TNCN ";    
+            }
+        }
+        else {
+            document.getElementById("result").innerText="voi so thu nhap "+ thuNhap + " thi ban khong can dong thue TNCN";
+        }
+    }
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyen tap su dung cau truc dieu kien 2</title>
+</head>
+<body>
+    <h2>Bài 7: Giải phương trình bậc 2.</h2>
+    <input type="text" placeholder="nhap vao a" id="a"><br><br>
+    <input type="text" placeholder="nhap vao b" id="b"><br><br>
+    <input type="text" placeholder="nhap vao c" id="c"><br><br>
+    <button onclick="nghiem()">ket qua</button>
+    <p id="result"></p>
+    <script>
+        function nghiem() {
+            var a = +document.getElementById("a").value;
+            var b = +document.getElementById("b").value;
+            var c = +document.getElementById("c").value;
+            var delta = ((b*b) - 4*a*c);
+            var nghiemkep = (b*(-1)) / (2*a);
+            var sqrtDelta = Math.sqrt(delta);
+            var x1 = ((b*(-1))+sqrtDelta)/(2*a);
+            var x2 = ((b*(-1))-sqrtDelta)/(2*a);
+            if (delta < 0) {
+                document.getElementById("result").innerText="Phuong trinh vo nghiem";
+            } else if (delta == 0) {
+                document.getElementById("result").innerText="Phuong trinh co nghiem kep: " + "x1 = x2 = " + nghiemkep;
+            } else {
+                document.getElementById("result").innerText="Phuong trinh co 2 nghiem phan biet la: " + "x1 = " + x1 + " va " + "x2 = " + x2;
+            }
+        }
+    </script>
+</body>
+</html>

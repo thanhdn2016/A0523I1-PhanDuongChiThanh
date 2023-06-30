@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyen tap su dung cau truc dieu kien 2</title>
+</head>
+<body>
+    <h2>Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.</h2>
+    <input type="text" placeholder="nhap vao tuoi cua mot nguoi" id="age"><br>
+    <button onclick="check()">Kiem tra</button>
+<p id="result"></p>
+<script>
+    function check() {
+        var a = Math.round(+document.getElementById("age").value);
+        if (a<120 && a>0) {
+            document.getElementById("result").innerText="so nhap vao la tuoi cua 1 nguoi: " + a;
+        } else {
+            document.getElementById("result").innerText="so nhap vao khong phai la tuoi cua 1 nguoi: " ;
+        }
+    }
+</script>
+</body>
+</html>

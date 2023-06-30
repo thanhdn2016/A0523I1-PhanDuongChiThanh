@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyen tap su dung cau truc dieu kien 2</title>
+</head>
+<body>
+    <h2>Bài 1: Chuyển từ độ C sang độ F.</h2>
+    <input placeholder="nhập độ C" type="text" name="Celsius" id="Celsius">
+    <button onclick="doi()">Chuyển Đổi</button>
+    <p id="ketqua"></p>
+    <script>
+        function doi() {
+            var d = document.getElementById("Celsius").value 
+           let doi = ((parseInt(d) * 9/5) + 32);
+            document.getElementById("ketqua").innerText = "Giá trị đã chuyển đổi từ độ C sang độ F là: " + doi;
+        }
+    </script>
+</body>
+</html>

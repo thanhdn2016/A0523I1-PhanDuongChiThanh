@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyen tap su dung cau truc dieu kien 2</title>
+</head>
+<body>
+    <h2>Bài 2: Chuyển từ mét sang feet</h2>
+    <input placeholder="nhập mét" type="text" name="met" id="met">
+    <button onclick="doi()">Chuyển Đổi</button>
+    <p id="ketqua"></p>
+    <script>
+        function doi() {
+            var m = +document.getElementById("met").value 
+           let ft = m * 3.2808;
+            document.getElementById("ketqua").innerText = "Giá trị đã chuyển đổi từ mét sang độ feet là: " + ft;
+        }
+    </script>
+</body>
+</html>

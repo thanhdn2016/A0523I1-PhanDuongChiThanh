@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyen tap su dung cau truc dieu kien 2</title>
+</head>
+<body>
+    <h2>Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác</h2>
+    <!-- Điều kiện để a,b,c là cạnh của một tam giác là:
+        a,b,c > 0
+        a + b > c
+        b + c > a
+        a + c > b -->
+    <input type="text" placeholder="nhap canh a" id="a"><br><br>
+    <input type="text" placeholder="nhap canh b" id="b"><br><br>
+    <input type="text" placeholder="nhap canh c" id="c"><br><br>
+    <button onclick="check()">Kiem Tra</button>
+    <p id="result"></p>
+    <script>
+        function check() {
+            var a = +document.getElementById("a").value;
+            var b = +document.getElementById("b").value;
+            var c = +document.getElementById("c").value;
+            if (a > 0 && b > 0 && c > 0 && (a+b) > c && (b+c) > a && (a+c) > b) {
+                document.getElementById("result").innerText="3 so tren la canh cua tam giac: " + "a=" + a + " b=" + b + " c=" + c;
+            } else {
+                document.getElementById("result").innerText="3 so tren khong phai la canh cua tam giac."
+            }
+        }
+    </script>
+</body>
+</html>
