@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyen tap su dung cau truc dieu kien 2</title>
+</head>
+<body>
+    <!-- Số tiền lãi = Số tiền gửi x lãi suất (%năm)/12 x số tháng gửi. -->
+    <h2>Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng</h2>
+    Nhap so tien gui: <input type="text" id="tienGui"> 
+    Nhap so thang gui: <input type="text" id="thangGui">
+    Nhap lai suat (%): <input type="text" id="laiSuat">
+    <button onclick="tinhls()">Ket qua</button>
+    <p id="result"></p>
+    <script>
+        function tinhls() {
+            let tienGui = +document.getElementById("tienGui").value;
+            let thangGui = +document.getElementById("thangGui").value;
+            let laiSuat = +document.getElementById("laiSuat").value;
+            let tienLai = tienGui * (laiSuat/100) / 12 * thangGui;
+            if (thangGui>=6) {
+                document.getElementById("result").innerText="So tien lai cua ban la: " + tienLai;
+            } else {
+                document.getElementById("result").innerText="Vi thoi han gui qua ngan nen ban khong co tien lai";
+            }
+        }
+
+    </script>
+</body>
+</html>
