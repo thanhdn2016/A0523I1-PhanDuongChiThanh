@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So Nguyen To</title>
+</head>
+<body>
+    <h2>[Bài tập] Hiển thị các số nguyên tố đầu tiên</h2>
+    Nhap vao so luong so nguyen to can in ra man hinh: <input type="text" id="snt">
+    <button onclick="insnt()">In ra SNT</button>
+    <script>
+        function insnt() {
+            var snt = document.getElementById("snt").value;
+            var f = true;
+            var n = 2;
+            for(i=0;i<=snt;i++) {
+                for (n = 2; n < snt-1; n++) {
+            if (snt % n == 0){
+                f = false;
+                break;
+            }
+            }
+        }
+    }
+    </script>
+</body>
+</html>

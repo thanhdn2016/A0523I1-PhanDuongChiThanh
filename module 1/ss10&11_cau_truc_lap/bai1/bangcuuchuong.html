@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bang Cuu Chuong</title>
+</head>
+<body>
+    <h2>[Bài tập] Sinh bảng cửu chương</h2>
+    click de in ra bang cuu chuong <br><button onclick="bangcuuchuong()">Bang Cuu Chuong</button>
+    <script>
+       function bangcuuchuong() {
+            document.write("<table border=1 width=100%>")
+                for(b=1;b<=10;b++) {
+            document.write("<tr>");
+                for(a=2;a<=9;a++)
+            document.write("<td>" +a + "x" + b +"="+ (a*b));
+            document.write("</td>");
+            document.write("</tr>");
+    }
+            document.write("</tr></table>");
+    }
+    </script>
+</body>
+</html>
