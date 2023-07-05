@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Bài 2: Tính giai thừa của một số nguyên dương</h2>
+    <input type="text" id="snd" placeholder="nhap so nguyen duong">
+    <button onclick="cal()">Tinh giai thua</button>
+    <p id="result"></p>
+    <script>
+        function cal() {
+        var a = document.getElementById("snd").value;
+            n = 1
+            for (i=1;i<=a;i++) {
+                n = n*i
+                document.getElementById("result").innerText="giai thua cua " + a +" la: " + n
+            }
+        }
+    </script>
+</body>
+</html>

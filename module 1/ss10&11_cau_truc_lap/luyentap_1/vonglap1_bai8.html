@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="start()">StartGame</button>
+<script>
+    function start() {
+        let Min = +prompt("Nhap so nho nhat (Min)");
+        let Max = +prompt("Nhap so lon nhat (Max)");
+        let random = Math.round(Math.random() * (Max - Min) + Min);
+        console.log(random)
+        let soLan = 1;
+        do {
+            let so = +prompt("Nhap so ma ban doan: ")
+            if(so === random){
+                alert("Ban da trung so");
+                break;
+            } else if (so < random) {
+                alert("So ban nhap NHO hon ket qua dung.")
+            } else {
+                alert("So ban nhap LON hon ket qua dung.")
+            }
+            if(soLan === 3){
+               alert("Ban da het luot doan so.")
+            }
+            soLan++;
+        } while (soLan <= 3)
+    }
+</script>
+</body>
+</html>
