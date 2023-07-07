@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.</h2>
+    <script>
+        let arr = Array(10)
+        console.log(arr)
+        var max = 0
+        for (let i = 0; i < 10; i++) {
+            let soNguyen = +prompt("nhap vao 10 so KHAC NHAU: ")
+            arr[i] = soNguyen ; 
+            if (arr[i]>max) {
+                max = arr[i];
+                var viTri=i;
+            }
+        }
+        console.log(arr);
+        document.write("Gia tri lon nhat trong mang la: "+max+"<br>");
+        document.write("Vi tri thu tu(index) trong mang la: "+viTri);
+    </script>
+</body>
+</html>
