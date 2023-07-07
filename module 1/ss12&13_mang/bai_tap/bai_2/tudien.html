@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>[Bài tập] Từ điển</h2>
+    <input type="text" placeholder="Nhap tu tieng anh" id="anh">
+    <button onclick="trans()">Translate</button>
+    <p id="result"></p>
+    <script>
+        function trans() {
+        let arrViet = ["xin chao","xin chao","cho", "con meo","tam biet","tam biet","yeu","cha","me"];
+        let arrAnh = ["hello","hi","dog", "cat","bye","goodbye","love","dad","mom"];
+        let key = document.getElementById("anh").value;
+        let isExist = false;
+        for(let index = 0; index < arrAnh.length; index++){
+            if(arrAnh[index] == key){
+                document.getElementById("result").innerText=(arrViet[index]);
+                isExist = true;
+                break;
+            }
+        }
+        if(!isExist){
+            document.getElementById("result").innerText=("Không tìm thấy khớp với từ khóa: "+key);
+        }
+    }   
+    </script>
+</body>
+</html>
