@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.</h2>
+    <script>
+        let arr = Array(+prompt("nhap vao do dai cua mang: "));
+        console.log(arr)
+        var max = 0
+        var sum = 0
+        for (let i = 0; i < arr.length; i++) {
+            let soNguyen = +prompt("nhap vao"+ " arr["+i+"]" )
+            arr[i] = soNguyen ; 
+            if (arr[i]>max) {
+                max = arr[i];
+            }
+            var sum = sum+ soNguyen;
+            var average = sum/(arr.length);
+        }
+        document.write("Gia tri lon nhat trong mang la: "+max+"<br>");
+        document.write("Trung binh cua cac phan tu trong mang la: "+average);
+    </script>
+</body>
+</html>
