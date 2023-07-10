@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, 
+        nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? 
+        Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".</h4>
+    <p id="result"></p>
+    <script>
+        let v = +prompt("Nhap vao so can tim(v): ");
+        let arr = [1,2,3,4,5,6,7,8,9,10];
+        for (let i = 0 ; i<arr.length; i++)
+        if (v == arr[i]) {  
+            document.getElementById("result").innerText="V is in array";
+            break;
+        } else {
+            document.getElementById("result").innerText="V is not in array";
+        }
+    </script>
+</body>
+</html>

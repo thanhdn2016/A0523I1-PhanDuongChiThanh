@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Bài 7:Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, 
+        nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? 
+        nếu V thuộc mảng đã cho xoá V khỏi mảng
+        (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)</h4>
+    <p id="result"></p>
+    <script>
+        let v = +prompt("Nhap vao so can tim(v): ");
+        let arr = [1,2,3,4,5,6,7,8,9,10];
+        let isExist = false
+        for (let i = 0 ; i<arr.length; i++) {
+        if (v == arr[i]) {  
+            arr.splice(i,1);
+            arr.push(0)
+            isExist = true;
+            break;
+        } 
+    }
+    if (isExist == false) {
+        document.getElementById("result").innerText="So "+v+" khong co trong mang";
+    }
+        console.log(arr);
+    </script>
+</body>
+</html>

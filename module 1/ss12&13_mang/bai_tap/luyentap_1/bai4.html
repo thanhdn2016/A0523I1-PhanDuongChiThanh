@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.</h2>
+    <p id="result"></p>
+    <p id="result2"></p>
+    <script>
+        let arr = Array(+prompt("nhap vao do dai cua mang: "));
+        for (let i = 0; i < arr.length; i++) {
+            let soNguyen = +prompt("nhap vao"+ " arr["+i+"]" )
+            arr[i] = soNguyen ; 
+        }
+        document.getElementById("result").innerText="Mang ban vua nhap vao la: "+arr.toString();
+        let newArr = arr.reverse();
+        document.getElementById("result2").innerText="Mang da duoc dao nguoc la: "+ newArr.toString();
+    </script>
+</body>
+</html>

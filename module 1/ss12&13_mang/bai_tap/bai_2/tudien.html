@@ -17,9 +17,9 @@
         let arrAnh = ["hello","hi","dog", "cat","bye","goodbye","love","dad","mom"];
         let key = document.getElementById("anh").value;
         let isExist = false;
-        for(let index = 0; index < arrAnh.length; index++){
-            if(arrAnh[index] == key){
-                document.getElementById("result").innerText=(arrViet[index]);
+        for(let i = 0; i < arrAnh.length; i++){
+            if(arrAnh[i] == key){
+                document.getElementById("result").innerText=(arrViet[i]);
                 isExist = true;
                 break;
             }
