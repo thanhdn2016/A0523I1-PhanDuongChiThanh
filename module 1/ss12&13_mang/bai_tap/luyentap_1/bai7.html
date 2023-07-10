@@ -12,6 +12,7 @@
         nếu V thuộc mảng đã cho xoá V khỏi mảng
         (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)</h4>
     <p id="result"></p>
+    <p id="result2"></p>
     <script>
         let v = +prompt("Nhap vao so can tim(v): ");
         let arr = [1,2,3,4,5,6,7,8,9,10];
@@ -27,7 +28,7 @@
     if (isExist == false) {
         document.getElementById("result").innerText="So "+v+" khong co trong mang";
     }
-        document.getElementById("result").innerText="Mảng sau khi chương trình được thực hiện là: "+arr.join(',');
+        document.getElementById("result2").innerText="Mảng sau khi chương trình được thực hiện là: "+arr.join(',');
     </script>
 </body>
 </html>
