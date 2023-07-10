@@ -10,5 +10,24 @@
     <h2>Bài 9- Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b.
     Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên.
     Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.</h2>
+<p id="result"></p>
+<p id="result2"></p>
+<p id="result3"></p>
+    <script>
+        let a = [];
+        let b = [];
+        for (let i = 0; i < 10; i++) {
+            let x = +prompt("Nhap arr1["+i+"] = ")
+            a.push(x);
+        }
+        document.getElementById("result").innerText="Mảng A bạn vừa nhập là: " + a.join(',');
+        for (let j = 0; j < 10; j++) {
+            let y = +prompt("Nhap arr2["+j+"] = ")
+            b.push(y);
+        }
+        document.getElementById("result2").innerText="Mảng B bạn vừa nhập là: " + b.join(',');
+        let c = a.concat(b)
+        document.getElementById("result3").innerText="Mảng C khi nối A và B vào là: " + c.join(',');
+    </script>
 </body>
 </html>
