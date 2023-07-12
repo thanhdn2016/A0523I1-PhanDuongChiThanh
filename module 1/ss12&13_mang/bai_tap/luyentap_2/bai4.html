@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = prompt("Nhap vao 1 chuoi ky tu: ")
+        let arr = str.split('');
+        console.log(arr);
+        let soTu = 1
+        let chuCai = 0 
+        if (str.length == 0) {
+                   alert("Vui long nhap vao mot chuoi ky tu!");
+                }
+            else {
+            document.write("Chuỗi bạn vừa nhập là : " + " (" + str + ")"+ "<br>");
+        for( i = 0 ; i < arr.length; i ++ ){
+            if(arr[i] != ' '){
+                chuCai ++;
+            }
+            if (arr[i] == ' ') {
+                
+                soTu++;
+            }
+        }
+    
+        document.write("Số từ trong chuỗi là : " + soTu+ "<br>");
+        document.write("Số Chữ cái, chữ số trong chuỗi là : " + chuCai)
+        }
+    </script>
+</body>
+</html>
