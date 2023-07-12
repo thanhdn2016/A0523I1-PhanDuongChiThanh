@@ -7,7 +7,23 @@
     <title>Document</title>
 </head>
 <body>
+    <p id="result"></p>
+    <p id="result2"></p>
     <script>
+//         var a =[[1, 2, 1, 24], 
+//                 [8, 11, 9, 4], 
+//                 [7, 0, 7, 27], 
+//                 [7, 4, 28, 14], 
+//                 [3, 10, 26, 7]];
+ 
+//  for (var i in a) 
+//  {
+//     document.write("row " + i + "<br>");
+//     for (var j in a[i]) 
+//       {
+//        document.write(" " + a[i][j]+"<br>");
+//       }
+//  }
     let row = +prompt("Nhap vao so hang cua mang: ");
     let col = +prompt("nhap vao so cot cua mang: ");
     let arr = new Array(row);
@@ -18,12 +34,15 @@
             arr[i][j] = x;
         }
     }
+    console.log(arr);
+    //for in dung de duyet index cua mang
     for (var n in arr) {
         document.write("row " + n + "<br>");
         for (var m in arr[n]) {
             document.write(" " + arr[n][m]+"<br>");
         }
     }
+    
     </script>
 </body>
 </html>
