@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 5</title>
+</head>
+<body>
+    <h4>Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.</h4>
+    <script>
+        let arr = new Array (+prompt("Nhap vao do dai cua mang"))
+        let arr1 = []
+        let arr2 = []
+        let flag;
+        if (arr.length==0) {
+            alert("Vui Long nhap 1 so nguyen");
+        }
+        for ( i = 0; i<arr.length; i++) {
+            arr1[i] = prompt("Nhap vao chuoi 1: ");
+        }
+        for ( j = 0; j<arr.length; j++) {
+            arr2[j] = prompt("Nhap vao chuoi 2: ");
+        }
+        for ( let m = 0 ; m < arr.length; m++) {
+            if (arr1[m] == arr2[m]) {
+                flag = true;
+            } else {
+                flag = false;
+                break;
+            }
+        }
+        if (flag == true) {
+            document.write("2 Mảng trên bạn vừa nhập vào là giống nhau" + "<br>");
+            document.write("Mang 1: "+arr1.join(',')+ "<br>");
+            document.write("Mang 2: "+arr2.join(','));
+        } 
+        if (flag == false) {
+            document.write("2 Mảng trên bạn vừa nhập vào là khác nhau"+ "<br>");
+            document.write("Mang 1: "+arr1.join(',')+ "<br>");
+            document.write("Mang 2: "+arr2.join(','));
+        }
+    </script>
+</body>
+</html>
