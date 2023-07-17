@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được</h3>
+    <script>
+        let banKinh = +prompt("Nhap vao ban kinh hinh tron: ")
+        let dienTich = sTron(banKinh)
+        let chuVi = pTron(banKinh)
+            document.write("Dien Tich Hinh Tron La: "+dienTich + "<br>");
+            document.write("Chu vi hinh tron la: "+chuVi);
+        function sTron(banKinh) {
+            let s = banKinh*banKinh*3.14;
+            return s
+        }
+        function pTron(banKinh) {
+            let p = (banKinh * 2) * 3.14
+            return p
+        }
+    </script>
+</body>
+</html>
