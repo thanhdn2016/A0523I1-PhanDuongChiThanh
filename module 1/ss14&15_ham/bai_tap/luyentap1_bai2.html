@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm. 
+    Gọi hàm từ trong phần (body) của trang web và hiển thị kết quả lên màn hình.</h3>
+    <button onclick="getNum()">Click to run</button>
+    <script>
+        function plus1(number) {
+            number++;
+            return number;
+        }
+        function getNum() {
+        let number = +prompt("Nhap vao 1 so");
+        let a = plus1(number)
+        document.write("Ket qua la: "+a)
+        }
+    </script>
+</body>
+</html>
