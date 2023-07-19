@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h3>Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</h3>
+    <button onclick="replace()">Click Me</button>
+</head>
+<body>
+    <script>
+        function replace() {
+            let a = +prompt("Nhap vao so thu nhat: " );
+            let b = +prompt("Nhap vao so thu hai: ");
+            document.write("so thu nhat la " + a+"<br>");
+            document.write("so thu hai la " + b+"<br>");
+            c = a;
+            a = b;
+            b = c;
+            document.write("sau khi da duoc doi cho thi so thu nhat la: "+ a +" va so thu hai la: "+ b);
+        } 
+    </script>
+</body>
+</html>

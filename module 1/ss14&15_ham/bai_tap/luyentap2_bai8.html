@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.</h3>
+    <p id="result"></p>
+    <button onclick="reverse()">Click de dao nguoc Mang</button>
+    <script>
+        let arr = new Array(+prompt("Nhap vao do dai cua mang"))
+            for (i = 0; i < arr.length; i++) {
+                arr[i] = prompt("Nhap vao gia tri cua mang tai vi tri(index) = ["+i+"]");
+            }
+            document.getElementById("result").innerText="Mang ban vua nhap vao la: " + arr.join(',');
+        function reverse() {
+            newArr = arr.reverse();
+            document.write("Mang da duoc dao nguoc la: " + newArr.join(','));
+            return newArr
+        }
+    </script>
+</body>
+</html>

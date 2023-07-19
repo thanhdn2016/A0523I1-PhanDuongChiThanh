@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h3>Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, 
+        kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. 
+        Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. </h3>
+        <p id="result"></p>
+        <button onclick="kiemTra()">Kiem tra</button>
+</head>
+<body>
+    <script>
+        let arr = new Array(+prompt("Nhap vao do dai cua mang"))
+        let count = 0;
+        let flag = false;
+            for (i = 0; i < arr.length; i++) {
+                arr[i] = prompt("Nhap vao gia tri cua mang tai vi tri(index) = ["+i+"]");
+            }
+            document.getElementById("result").innerText="Mang ban vua nhap vao la: " + arr.join(',');
+        function kiemTra() {
+            let a = prompt("Nhap vao ky tu ban muon kiem tra: ");
+            for(j=0;j<arr.length;j++) {
+                if (arr[j] == a) {
+                count++;
+                flag = true;
+            }
+        }
+        if (flag==true) {
+            document.write("so lan xuat hien cua ky tu do la: " + count);
+        } else {
+            document.write("-1");
+        }
+    }
+    </script>
+</body>
+</html>

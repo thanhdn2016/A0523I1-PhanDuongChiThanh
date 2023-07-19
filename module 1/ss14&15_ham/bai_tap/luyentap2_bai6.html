@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h3>Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. 
+        Nếu là nguyên dương trả về true, ngược lại trả về false.</h3>
+        <input type="text" placeholder="Nhap vao 1 so" id="number">
+        <button onclick="check()">Kiem tra</button>
+        <script>
+            function check() {
+                let num = +document.getElementById("number").value;
+                if (num == 0) {
+                    document.write(num + " Khong phai la so nguyen duong cung khong phai la so nguyen am!")
+                } else if (num > 0) {
+                    document.write(num + " la so nguyen duong")
+                    return true
+                } else {
+                    document.write(num + " khong phai la so nguyen duong")
+                    return false
+                }
+            }
+
+        </script>
+</body>
+</html>
