@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>[Bài tập] Xây dựng lớp mô tả hình chữ nhật</h3>
+    <canvas id="demoCanvas" width="800" height="300"></canvas>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <p id="result4"></p>
+    <script>
+        var canvas = document.getElementById("demoCanvas");
+        class Rectangle {
+            constructor(_width,_height) {
+                this.width = _width;
+                this.height = _height;
+            }
+            setWidth(newWidth){
+                this.width = newWidth;
+                return this.width;
+            }
+            getWidth(){
+                return this.width;
+            }
+            setHeight(newHeight){
+                this.height = newHeight;
+                return this.height;
+            }
+            getHeigh(){
+                return this.height
+            }
+            getChuVi(){
+                return (this.width+this.height) *2;
+            }
+            getDienTich(){
+                return (this.width * this.height);
+            }
+        }
+        let a = +prompt("Nhap vao chieu dai(max = 800)")
+        let b = +prompt("Nhap vao chieu rong(max = 300)")
+        if(a > 800 || b > 300) {
+            alert("Nếu đơn vị bạn nhập vào lớn hơn Max thì hình vẽ cũng chỉ bằng max")
+        }
+        if(isNaN(a)==true || isNaN(b)==true){
+            alert("Vui long nhap vao 1 so nguyen");
+        }
+        let rectangle = new Rectangle(a,b);
+        let dienTich = rectangle.getDienTich();
+        let chuVi = rectangle.getChuVi();
+        var ctx = canvas.getContext('2d');
+        // var randomColor = "#"+(Math.floor(Math.random()*16777215).toString(16));
+        // ctx.fillStyle=randomColor;
+        // ctx.fillStyle='#B9D3EE';
+        ctx.fillRect(0, 0, a, b);
+        infor()
+
+        function infor() {
+        document.getElementById("result1").innerText="Chieu dai HCN la: " + a+"(px)";
+        document.getElementById("result2").innerText="Chieu rong HCN la: " + b+"(px)";
+        document.getElementById("result3").innerText="Dien tich HCN la: " + dienTich+"(px)";
+        document.getElementById("result4").innerText="Chu vi HCN la: " + chuVi+"(px)";
+        }
+
+        function update(){
+            ctx.clearRect(0, 0, a, b);
+            var randomColor = "#"+(Math.floor(Math.random()*16777215).toString(16));
+            ctx.fillStyle=randomColor;
+            let newWidth = +document.getElementById("newWidth").value;
+            let newHeight = +document.getElementById("newHeight").value;
+            a = newWidth;
+            b = newHeight;
+            rectangle.setHeight(a);
+            rectangle.setWidth(b);
+            dienTich = rectangle.getDienTich();
+            chuVi = rectangle.getChuVi();
+            ctx.fillRect(0, 0, a, b);
+            infor();
+        }
+    </script>
+    <br>
+    <table>
+        <tr><td>nhap vao chieu dai moi:</td> <td><input type="text" placeholder="vi du:100" id="newWidth"></td></tr>
+        <tr><td>nhap vao chieu rong moi:</td> <td><input type="text" id="newHeight"></td></tr>
+    </table>
+    <button onclick="update()">Cap nhat</button>
+</body>
+</html>
