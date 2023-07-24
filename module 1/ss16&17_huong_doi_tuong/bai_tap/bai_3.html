@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        button {
+            width: 170px;
+            height: 50px;
+            background-color: lightpink;
+            font-size: 13px;
+        }
+    </style>
+    <h3>[Bài tập] Xây dựng lớp mô tả điện thoại</h3>
+    <h2>Nokia</h2>
+    <button onclick="checkStatus1()">Kiểm tra trạng thái nokia</button>
+    <button onclick="turnOn1()">Bật điện thoại nokia</button>
+    <button onclick="turnOff1()">Tắt điện thoại nokia</button>
+    <button onclick="charging1()">Sạc pin nokia</button>
+    <button onclick="texting1()">Soạn văn bản nokia</button>
+    <button onclick="sending1()">Gửi tin nhắn cho iphone</button>
+    <button onclick="checkInbox1()">Xem tin nhắn đã nhận</button>
+    <button onclick="checkSent1()">Xem tin nhắn đã gửi</button>
+    <br><br><br><br>
+    <h2>Iphone</h2>
+    <button onclick="checkStatus2()">Kiểm tra trạng thái iphone</button>
+    <button onclick="turnOn2()">Bật điện thoại iphone</button>
+    <button onclick="turnOff2()">Tắt điện thoại iphone</button>
+    <button onclick="charging2()">Sạc pin iphone</button>
+    <button onclick="texting2()">Soạn văn bản iphone</button>
+    <button onclick="sending2()">Gửi tin nhắn cho nokia</button>
+    <button onclick="checkInbox2()">Xem tin nhắn đã nhận</button>
+    <button onclick="checkSent2()">Xem tin nhắn đã gửi</button>
+    <p id="inbox1"></p>
+    <p id="inbox2"></p>
+    <p id="inbox3"></p>
+    <p id="sent1"></p>
+    <p id="sent2"></p>
+    <p id="sent3"></p>
+<script>
+    alert("Đừng quên mở (cả 2) điện thọai trước khi chạy")
+    class Mobile{
+        constructor(_name) {
+        this.battery = 100;
+        this.name = _name
+        this.mess ;
+        this.messDraft = "";
+        this.messInbox ;
+        this.messSent;
+        this.sendMess;
+        this.inbox = [];
+        this.sent = [];
+        this.status = false;
+        }
+        checkOnOff() {
+            if (this.battery == 0 || this.status==false) {
+                alert("Điện thoại đang tắt và lượng pin là: " + this.battery);
+            } else{
+                alert("Điện thoại đang bật và lượng pin là: " + this.battery);
+                return this.status = true;
+            }
+        }
+        setMess(newMess){
+            this.mess = newMess;
+        }
+        getMess(){
+            return this.mess
+        }
+        turnOnDevice(){
+            alert("Điện thoại đã được bật")
+            return this.status = true;
+        }
+        turnOffDevice(){
+            alert("Điện thoại đã tắt")
+            return this.status = false;  
+        }
+        charging() {
+            if (this.battery<100) {
+            this.battery++;
+            console.log(this.battery);
+        } else {
+            alert("Đã đầy pin!")
+        }
+            return this.battery;
+        }
+        used() {
+            if (this.battery==0) {
+                turnOffDevice();
+            }else {
+                this.battery = this.battery-1;
+            }
+            return this.battery
+        }
+        texting(){
+            if(this.status==true) {
+            this.messDraft = prompt("Nhập vào tin nhắn bạn muốn soạn:")
+            alert("Đây chỉ là tin nhắn soạn sẵn(tin nháp), có thể dùng để gửi đi!")
+            this.used()
+            } else {
+                alert("Điện thoại đang tắt hoặc đã hết pin")
+            }
+            return this.messDraft;
+        }
+        sendingTo(name){
+            if(this.status == true) {
+                if (confirm("Bạn muốn gửi tin nhắn đã soạn -> nhấn ok || cancel để nhập vào tin nhắn bạn muốn gửi ")==true) {
+                    this.sendMess = name.setMess(this.messDraft) 
+                    this.used()
+                    this.sent.unshift(name.getMess())
+                    alert("Đã gửi thành công")
+                    return this.sendMess;
+                } else {
+                    this.sendMess = name.setMess(prompt("Nhập vào văn bản bạn muốn gửi: "));
+                    this.used()
+                    this.sent.unshift(name.getMess())
+                    alert("Đã gửi thành công")
+                    return this.sendMess;
+                }
+            } else {
+                alert("Điện thoại đang tắt hoặc đã hết pin")
+            }
+        }
+        receiveFrom(name){
+            if(this.status == true) {
+                this.messInbox = name.getMess()
+                this.inbox.unshift(name.getMess())
+                this.used();
+                return this.messInbox;
+            } else {
+                alert("Điện thoại đang tắt hoặc đã hết pin")
+            }
+            return this.messInbox
+        }
+        checkInbox(){
+            if (this.status == true) {
+                alert("Chỉ có thể hiển thị tối đa 3 tin nhắn theo thứ tự mới nhất!")
+                for(let i=0; i < this.inbox.length ;i++) {
+                    document.getElementById("inbox"+(i+1)).innerText="Tin đã nhận thứ "+ (i+1)+" là: "+this.inbox[i]
+                    this.used()
+                }
+            }
+            else {
+                alert("Điện thoại đang tắt hoặc đã hết pin")
+            }
+        }
+        checkSent(){
+            if(this.status == true) {
+                alert("Chỉ có thể hiển thị tối đa 3 tin nhắn theo thứ tự mới nhất!")
+                for (let j=0;j<this.sent.length;j++) {
+                    document.getElementById("sent"+(j+1)).innerText="Tin đã gửi thứ "+ (j+1) + " là: "+this.sent[j]
+                    this.used()
+                }
+            } else {
+                alert("Điện thoại đang tắt hoặc đã hết pin")
+            }
+        }
+    }
+    function checkStatus1(){
+        nokia.checkOnOff()
+    }
+    function turnOn1(){
+        nokia.turnOnDevice()
+    }
+    function turnOff1(){
+        nokia.turnOffDevice()
+    }
+    function charging1(){
+        nokia.charging()
+    }
+    function texting1() {
+        nokia.texting()
+    }
+    function sending1() {
+        nokia.sendingTo(iphone)
+        nokia.receiveFrom(iphone)
+    }
+    function checkInbox1(){
+        iphone.checkInbox()
+    }
+    function checkSent1(){
+        nokia.checkSent()
+    }
+    
+    function checkStatus2(){
+        iphone.checkOnOff()
+    }
+    function turnOn2(){
+        iphone.turnOnDevice()
+    }
+    function turnOff2(){
+        iphone.turnOffDevice()
+    }
+    function charging2(){
+        iphone.charging()
+    }
+    function texting2(){
+        iphone.texting()
+    }
+    function sending2(){
+        iphone.sendingTo(nokia)
+        iphone.receiveFrom(nokia)
+    }
+    function checkInbox2(){
+        nokia.checkInbox()
+    }
+    function checkSent2(){
+        iphone.checkSent()
+    }
+    let nokia = new Mobile()
+    let iphone = new Mobile()
+</script>
+</body>
+</html>
