@@ -11,12 +11,10 @@
     <script>
    function tamGiacCan() {
   let h = +prompt("Nhập vào chiều cao của tam giác: ");
-
   if (h <= 0) {
     alert("Vui lòng nhập một số nguyên dương.");
     return;
   }
-
   for (let i = 1; i <= h; i++) {
     let space = h - i;
     let star = 2 * i - 1;
@@ -26,7 +24,7 @@
     }
     // In dấu sao đầu tiên trên mỗi hàng
     document.write("*");
-    // In khoảng trống bên trong tam giác (nếu cần)
+    // In khoảng trống bên trong tam giác
     if (i > 1) {
       for (let k = 1; k <= star - 2; k++) {
         document.write("&nbsp");
@@ -37,7 +35,7 @@
     document.write("<br>");
   }
   // In cạnh cuối cùng của tam giác
-  for (let i = 1; i <= h; i++) {
+  for (let i = 1; i <= h+1; i++) {
     document.write("*");
   }
 }
