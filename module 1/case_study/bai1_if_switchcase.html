@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyen tap su dung cau truc dieu kien 2</title>
+</head>
+<body>
+    <h2>Bài 1: Viết chương trình tính thuế thu nhập và lương ròng nhân viên.</h2>
+   <button onclick="tinh()">Click to run</button>
+   <p id="result"></p>
+   <p id="result2"></p>
+   <script>
+    function tinh() {
+        var thuNhap = +prompt("Nhap vao thu nhap cua nhan vien")
+        var luongRong=0;
+        if (thuNhap < 7000000 ) {
+            var thue = thuNhap * 5/100;
+            luongRong = thuNhap-thue;
+            if (thue > 0) {
+            document.getElementById("result").innerText="Thue TNCN phai nop la " + thue;
+            document.getElementById("result2").innerText="Luong rong cua nhan vien la: " + luongRong;
+            } else {
+                document.getElementById("result").innerText="Ban khong can dong thue TNCN "; 
+                document.getElementById("result2").innerText="";   
+            }
+        } else if (thuNhap >= 7000000 && thuNhap <=15000000) {
+            var thue = thuNhap  * 15/100;
+            luongRong = thuNhap-thue;
+            if (thue > 0) {
+            document.getElementById("result").innerText="Thue TNCN phai nop la " + thue;
+            document.getElementById("result2").innerText="Luong rong cua nhan vien la: " + luongRong;
+            } else {
+                document.getElementById("result").innerText="Ban khong can dong thue TNCN ";   
+                document.getElementById("result2").innerText=""; 
+            }
+        } else {
+            var thue = thuNhap  * 20/100;
+            luongRong = thuNhap-thue;
+            if (thue > 0) {
+            document.getElementById("result").innerText="Thue TNCN phai nop la " + thue;
+            document.getElementById("result2").innerText="Luong rong cua nhan vien la: " + luongRong;
+            } else {
+                document.getElementById("result").innerText="Ban khong can dong thue TNCN ";    
+                document.getElementById("result2").innerText="";    
+            }
+        }
+    }
+   </script>
+</body>
+</html>
