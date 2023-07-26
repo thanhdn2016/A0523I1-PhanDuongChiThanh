@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="width" placeholder="nhập vào chiều cao" />
+    <button onclick="drawTriangle()">Vẽ tam giác</button>
+    <div id="triangle"></div>
+    <script>
+      function drawTriangle() {
+        var width = +document.getElementById("width").value
+        var triangle = document.getElementById("triangle");
+        triangle.innerHTML = "";
+        for (var i = 0; i < width; i++) {
+          for (var j = 0; j <= i; j++) {
+            if (i >= 2 && i < width - 1 && j >= 1 && j < i) {
+              triangle.innerHTML += " &nbsp&nbsp ";
+            } else {
+              triangle.innerHTML += " * ";
+            }
+          }
+          triangle.innerHTML += "<br>";
+        }
+      }
+    </script>
+</body>
+</html>
