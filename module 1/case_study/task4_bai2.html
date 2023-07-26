@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h3>Bài 2: Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó
+      Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.
+      ⇨	Có 3 kí tự khác nhau là a, b và c.
+      </h3>
+</head>
+<body>
+    <script>
+    function differentSymbolsNaive(s) {
+  let arrChar = [];
+  for (let i = 0; i < xau.length; i++) {
+    // indexOf() để kiểm tra xem ký tự xau[i] có tồn tại trong arrChar hay không. 
+    // Nếu không tồn tại (trả về giá trị -1),
+    if (arrChar.indexOf(xau[i]) === -1) {
+      arrChar.push(xau[i]);
+    }
+  }
+  let ketQua = "Các ký tự khác nhau trong xâu: " + arrChar.join(', ');
+  document.write(ketQua + "<br>");
+  return arrChar.length;
+}
+let xau = prompt("Nhập xâu kí tự:");
+let ketQua = differentSymbolsNaive(xau);
+document.write("Số lượng ký tự khác nhau trong xâu: " + ketQua);
+    </script>
+</body>
+</html>
