@@ -21,14 +21,12 @@ function maxFraction(tuSo, mauSo) {
   }
   return chiSoMax;
 }
-// Nhập tử số từ người dùng
 let tuSo = [];
 let soPhanTuTuSo = +prompt("Nhập số phần tử của tử số: ");
 for (let i = 0; i < soPhanTuTuSo; i++) {
   let phanTuTuSo = +prompt("Nhập phần tử thứ " + (i + 1) +" của tử số: ");
   tuSo.push(phanTuTuSo);
 }
-// Nhập mẫu số từ người dùng
 let mauSo = [];
 let soPhanTuMauSo = +prompt("Nhập số phần tử của mẫu số: ");
 for (let i = 0; i < soPhanTuMauSo; i++) {
@@ -36,7 +34,6 @@ for (let i = 0; i < soPhanTuMauSo; i++) {
   mauSo.push(phanTuMauSo);
 }
 let ketQua = maxFraction(tuSo, mauSo);
-// Hiển thị kết quả lên trang web
     document.write("Tử số: " + tuSo.join(", ") + "<br>");
     document.write("Mẫu số: " + mauSo.join(", ") + "<br>");
     document.write("Phân số lớn nhất là: "+ tuSo[ketQua]+"/"+mauSo[ketQua]);
