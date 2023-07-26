@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let xau1 = prompt("Nhập xâu kí tự thứ nhất:");
+        let xau2 = prompt("Nhập xâu kí tự thứ hai:");
+        let ketQua = commonCharacterCount(xau1, xau2);
+        
+    function commonCharacterCount(xau1, xau2) {
+  let count = 0;
+  let charCount1 = {};
+  let charCount2 = {};
+  for (let i = 0; i < xau1.length; i++) {
+    let char = xau1[i];
+    charCount1[char] = (charCount1[char] || 0) + 1;
+  }
+  for (let i = 0; i < xau2.length; i++) {
+    let char = xau2[i];
+    charCount2[char] = (charCount2[char] || 0) + 1;
+  }
+  let kyTuChung = [];
+  // Duyệt qua từng ký tự trong xâu xau1
+  // Nếu ký tự đó cũng xuất hiện trong xâu xau2, tăng biến count lên 1 và giảm số lần xuất hiện của ký tự đó trong charCount2 đi 1
+  for (let char in charCount1) {
+    if (char in charCount2) {
+        let minCount = Math.min(charCount1[char], charCount2[char]);
+      count += minCount;
+        if (minCount > 0) {
+        kyTuChung.push(char);
+        }
+      }
+    }
+    document.write("Các ký tự chung giữa hai xâu: " + kyTuChung.join(', ') + "<br>")
+  return count;
+}
+document.write("Số lượng ký tự chung giữa hai xâu: " + ketQua)
+    </script>
+</body>
+</html>
