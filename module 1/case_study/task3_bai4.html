@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>== Menu thức uống ==</p>
+    <p>1. Cafe - 20,000 VND</p>
+    <p>2. Cam vắt - 15,000 VND</p>
+    <p>3. Nước ép cà rốt - 25,000 VND</p>
+    <p>4. Nước ép cà chua - 30,000 VND</p>
+    <p>5. Nước lọc - 10,000 VND</p>
+    <p>6. Nước dừa - 20,000 VND</p>
+    <p>7. Thoát gọi món<br></p>
+    <button onclick="main()">Nhan de goi mon</button>
+    <button onclick="tinhTongTien()">Tinh tien</button>
+    <button onclick="location.reload()">Reset</button>
+    <p id="result1"></p>
+    <br>
+    <script>
+        let donGia = [20000, 15000, 25000, 30000, 10000, 20000];
+        let tongTien = 0;
+        let luaChon=0;
+        let soLuong=0;
+function tinhTongTien() {
+    
+    document.getElementById("result1").innerText="Tổng số tiền cần phải trả: " + tongTien + " VND";
+  return tongTien;
+}
+function main() {
+  let tiepTucDatHang = true;
+  while(tiepTucDatHang==true) {
+   luaChon = +prompt("Nhập số thứ tự thức uống bạn muốn (hoặc nhấn 7 để thoát):");
+   if (luaChon > 7){
+    alert("Vui long nhap 1 so be hon 7")
+   }
+    if (isNaN(luaChon)==true) {
+     alert("Vui lòng nhập một số!");
+    }
+    if (luaChon >= 1 && luaChon <= donGia.length) {
+       soLuong = +prompt("Nhập số lượng thức uống:");
+       tongTien = tongTien + (soLuong * donGia[luaChon - 1])
+      if (isNaN(soLuong)==true) {
+        alert("Vui lòng nhập một số!");
+      }
+    }
+    if (luaChon==7) {
+        tiepTucDatHang = false;
+        return;
+    }
+}
+}
+    </script>
+</body>
+</html>
