@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function maxFraction(tuSo, mauSo) {
+  let chiSoMax = 0;
+  let giaTriPhanSoMax = tuSo[0] / mauSo[0];
+
+  for (let i = 1; i < tuSo.length; i++) {
+    let giaTriPhanSo = tuSo[i] / mauSo[i];
+    if (giaTriPhanSo > giaTriPhanSoMax) {
+      giaTriPhanSoMax = giaTriPhanSo;
+      chiSoMax = i;
+    }
+  }
+  return chiSoMax;
+}
+// Nhập tử số từ người dùng
+let tuSo = [];
+let soPhanTuTuSo = +prompt("Nhập số phần tử của tử số: ");
+for (let i = 0; i < soPhanTuTuSo; i++) {
+  let phanTuTuSo = +prompt("Nhập phần tử thứ " + (i + 1) +" của tử số: ");
+  tuSo.push(phanTuTuSo);
+}
+// Nhập mẫu số từ người dùng
+let mauSo = [];
+let soPhanTuMauSo = +prompt("Nhập số phần tử của mẫu số: ");
+for (let i = 0; i < soPhanTuMauSo; i++) {
+  let phanTuMauSo = +prompt("Nhập phần tử thứ " + (i + 1) +" của mẫu số: ");
+  mauSo.push(phanTuMauSo);
+}
+let ketQua = maxFraction(tuSo, mauSo);
+// Hiển thị kết quả lên trang web
+    document.write("Tử số: " + tuSo.join(", ") + "<br>");
+    document.write("Mẫu số: " + mauSo.join(", ") + "<br>");
+    document.write("Chỉ số (vị trí index trong mảng) của phân số lớn nhất là (tính từ 0): " + ketQua);
+    </script>
+</body>
+</html>
