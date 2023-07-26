@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h2>Bài 2:  Cho 2 mảng A và B chứa số nguyên. Tìm ra một mảng đã được sắp xếp
+    chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A</h2>
+<body>
+    <script>
+   function missingValue(A, B) {
+  let ketQua = [];
+
+  for (let i = 0; i < B.length; i++) {
+    let phanTu = parseInt(B[i], 10);
+    if (!A.includes(phanTu) && !ketQua.includes(phanTu)) {
+      ketQua.push(phanTu);
+    }
+  }
+  return ketQua;
+}
+// Nhập mảng A từ bàn phím
+let A = [];
+let soPhanTuA = +prompt("Nhập số phần tử của mảng A:");
+for (let i = 0; i < soPhanTuA; i++) {
+  let phanTuA = +prompt("Nhập phần tử thứ " + i + " của mảng A: ")
+  A.push(phanTuA);
+}
+// Nhập mảng B từ bàn phím
+let B = [];
+let soPhanTuB = +prompt("Nhập số phần tử của mảng B:");
+
+for (let i = 0; i < soPhanTuB; i++) {
+  let phanTuB = +prompt("Nhập phần tử thứ " + i + " của mảng B: ")
+  B.push(phanTuB);
+}
+let result = missingValue(A, B);
+
+// Hiển thị kết quả lên trang web
+document.write("Mảng A: " + A.join(", ") + "<br>");
+document.write("Mảng B: " + B.join(", ") + "<br>");
+document.write("Kết quả: " + result.join(", "));
+
+    </script>
+</body>
+</html>
