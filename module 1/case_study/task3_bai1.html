@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function prefixSums(array) {
+  let doDai = array.length;
+  let ketQua = new Array(doDai);
+  // Trường hợp đặc biệt khi mảng rỗng
+  if (doDai === 0) {
+    return [];
+  }
+  ketQua[0] = array[0]; // Gán phần tử đầu tiên của mảng kết quả bằng phần tử đầu tiên của mảng số nguyên
+  // Tính tổng tích lũy cho các phần tử còn lại
+  for (let i = 1; i < doDai; i++) {
+    ketQua[i] = ketQua[i - 1] + array[i];
+  }
+  return ketQua;
+}
+// Nhập mảng từ người dùng
+let arr = prompt("Nhập mảng số nguyên, các số cách nhau bằng dấu phẩy (ví dụ: 1,2,3):");
+let array = [];
+let phanTu = "";
+// Chuyển đổi chuỗi thành mảng các số nguyên
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] !== ",") {
+    phanTu += arr[i];
+  } else {
+    array.push(+(phanTu));
+    phanTu = "";
+  }
+}
+// Thêm phần tử cuối cùng vào mảng
+array.push(+(phanTu));
+let ketQua = prefixSums(array);
+// Hiển thị kết quả lên trang web
+document.write("Mảng số nguyên đã nhập: " + array.join(", ") + "<br>");
+document.write("Mảng kết quả tổng tích lũy: " + ketQua.join(", "));
+    </script>
+</body>
+</html>
