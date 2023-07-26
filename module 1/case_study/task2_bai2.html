@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>task2_bai2 vẽ tam giác cân</h2>
+    <button onclick="tamGiacCan()">CLick to Run</button>
+    <script>
+        function tamGiacCan() {
+           let h = +prompt("Nhap vao chieu cao: ")
+           if (h>0) {
+                for(let i = 1; i<=h;i++) {
+                    for (j = 1; j<2*h;j++){
+                        if(Math.abs(h-j)<=(i-1)){
+                            document.write("*")
+                        } else{
+                            document.write("&nbsp&nbsp")
+                        }
+                    }
+                    document.write("<br>")
+                }
+           }
+           else{
+            alert("Nhap vao 1 so nguyen duong")
+           }
+        }
+    </script>
+</body>
+</html>

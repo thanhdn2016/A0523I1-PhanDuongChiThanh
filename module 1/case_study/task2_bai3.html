@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>task2_bai3 vẽ tam giác cân rỗng</h2>
+    <button onclick="tamGiacCan()">CLick to Run</button>
+    <script>
+   function tamGiacCan() {
+  let h = +prompt("Nhập vào chiều cao của tam giác: ");
+
+  if (h <= 0) {
+    alert("Vui lòng nhập một số nguyên dương.");
+    return;
+  }
+
+  for (let i = 1; i <= h; i++) {
+    let space = h - i;
+    let star = 2 * i - 1;
+    // In khoảng trắng phía trước dấu sao đầu tiên trên mỗi hàng
+    for (let j = 1; j <= space; j++) {
+      document.write("&nbsp;");
+    }
+    // In dấu sao đầu tiên trên mỗi hàng
+    document.write("*");
+    // In khoảng trống bên trong tam giác (nếu cần)
+    if (i > 1) {
+      for (let k = 1; k <= star - 2; k++) {
+        document.write("&nbsp");
+      }
+      // In dấu sao cuối cùng trên mỗi hàng (không in cho hàng đầu tiên)
+      document.write("*");
+    }
+    document.write("<br>");
+  }
+  // In cạnh cuối cùng của tam giác
+  for (let i = 1; i <= h; i++) {
+    document.write("*");
+  }
+}
+    </script>
+</body>
+</html>
