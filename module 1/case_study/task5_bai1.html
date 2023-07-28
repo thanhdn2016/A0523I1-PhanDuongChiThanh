@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let rowN = +prompt("Nhạp số hàng của mảng(n): ");
+        let colM = +prompt("Nhạp số cột của mảng (m): ");
+
+        let arr2d = new Array(rowN);
+        let sum = 0;
+        //[U, U]
+        for(let row_index = 0; row_index < arr2d.length; row_index++){
+            arr2d[row_index] = new Array(colM);
+            for(let col_index = 0; col_index < arr2d[row_index].length; col_index++){
+                let value = + prompt("Nhap giá trị tại [ " + row_index + " , "+col_index + "] :")
+                arr2d[row_index][col_index] = value;
+                if (value%2==0){
+                    sum += value
+                }
+            }
+        }
+       document.write("Mang ban vua nhap la: "+arr2d.join(' ')+"<br>")
+       document.write("Tong cac so chan trong mang la: "+sum)
+    </script>
+</body>
+</html>
