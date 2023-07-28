@@ -17,22 +17,22 @@
   let charCount1 = {};
   let charCount2 = {};
   for (let i = 0; i < xau1.length; i++) {
-    let char = xau1[i];
-    charCount1[char] = (charCount1[char] || 0) + 1;
+    let a = xau1[i];
+    charCount1[a] = (charCount1[a] || 0) + 1;
   }
   for (let i = 0; i < xau2.length; i++) {
-    let char = xau2[i];
-    charCount2[char] = (charCount2[char] || 0) + 1;
+    let a = xau2[i];
+    charCount2[a] = (charCount2[a] || 0) + 1;
   }
   let kyTuChung = [];
   // Duyệt qua từng ký tự trong xâu xau1
   // Nếu ký tự đó cũng xuất hiện trong xâu xau2, tăng biến count lên 1 và giảm số lần xuất hiện của ký tự đó trong charCount2 đi 1
-  for (let char in charCount1) {
-    if (char in charCount2) {
-        let minCount = Math.min(charCount1[char], charCount2[char]);
+  for (let a in charCount1) {
+    if (a in charCount2) {
+        let minCount = Math.min(charCount1[a], charCount2[a]);
       count += minCount;
         if (minCount > 0) {
-        kyTuChung.push(char);
+        kyTuChung.push(a);
         }
       }
     }
