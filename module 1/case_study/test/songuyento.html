@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So Nguyen To</title>
+</head>
+<body>
+    <h2>[Bài tập] Hiển thị các số nguyên tố đầu tiên</h2>
+    Nhap vao so luong so nguyen to can in ra man hinh: <input type="text" id="snt">
+    <button onclick="insnt()">In ra SNT</button>
+    <script>
+        function insnt() {
+        let n = document.getElementById("snt").value;
+        let count = 0;
+        let i = 0;
+        while (true) {
+            if (isPrime(i)) {
+                document.write(count + 1 + ": " + i +"<br>");
+                count++;
+            }
+            i++;
+            if (count >= n) {
+                break
+            }
+        }
+        }
+        function isPrime(number) {
+            if (number < 2) {
+                return false;
+            } else {
+                for (let i = 2; i < number; i++) {
+                    for (let j = 0; j < number; j++) {
+                        if (number % i === 0) {
+                            return false
+                        }
+                    }
+                }
+                return true
+            }
+        }
+    </script>
+</body>
+</html>

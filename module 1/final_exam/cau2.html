@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>viết chương trình kiểm tra năm nhuận dương lịch từ chuỗi người dùng nhập vào.</h3>
+    <button onclick="main()">Bam de kiem tra</button>
+    <p id="result"></p>
+    <script>
+    let ngay;
+    let thang;
+    let nam;
+    function kiemTraDinhDangChuoi(chuoi) {
+  if (chuoi.length !== 10) { 
+    return false;
+  }
+  if (chuoi[2] !== '/' || chuoi[5] !== '/') {
+    return false;
+  }
+   ngay = +(chuoi.slice(0, 2));
+   thang = +(chuoi.slice(3, 5));
+   nam = +(chuoi.slice(6));
+  if (isNaN(ngay) || isNaN(thang) || isNaN(nam) || ngay < 1 || ngay > 31 || thang < 1 || thang > 12) {
+    return false;
+  }
+  return true; 
+}
+function kiemTraNamNhuan(nam) {
+  return (nam % 4 === 0 && nam % 100 !== 0) || nam % 400 === 0;
+}
+function main() {
+  let chuoiNgayThangNam = prompt("Nhập ngày tháng năm (dd/MM/yyyy):");
+  if (!kiemTraDinhDangChuoi(chuoiNgayThangNam)) {
+    alert("Yêu cầu nhập đúng định dạng dd/MM/yyyy");
+    return;
+  }
+  if (kiemTraNamNhuan(nam)) {
+    document.getElementById("result").innerText=(nam + " là năm nhuận");
+  } else {
+    document.getElementById("result").innerText=(nam + " không là năm nhuận");
+  }
+}
+</script>
+</body>
+</html>

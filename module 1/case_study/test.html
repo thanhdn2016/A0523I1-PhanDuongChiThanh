@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CLASS MOBILE</title>
+</head>
+<style>
+    button {
+        width: 45px;
+        height: 20px;
+        text-align: center;
+        font-size: 0.7em;
+        background: lightyellow;
+    }
+</style>
+<body>
+
+<!--may 1-->
+<table align="left" style="border: 3px blue solid; background-color: silver">
+    <tr>
+        <td colspan="4">Iphone 14 pro max</td>
+        <td style="font-size: 0.5em" align="right"><span id="pindisplay1">2</span></td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            <textarea cols="30px" rows="24" id="screen1"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="onoffFunction()">on/off</button></td>
+        <td><button type="button" onclick="showInbox()">inbox</button></td>
+        <td><button type="button" onclick="sendMess()">send</button></td>
+        <td><button type="button" onclick="chargeFunction()">charge</button></td>
+        <td><button type="button" onclick="showSent()">sent</button></td>
+    </tr>
+</table>
+
+<!--may 2-->
+<table align="right" style="border: 3px blue solid; background-color: silver">
+    <tr>
+        <td colspan="4">Samsung galaxy</td>
+        <td style="font-size: 0.5em" align="right"><span id="pindisplay2">5</span></td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            <textarea cols="30px" rows="24" id="screen2"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="onoffFunction1()">on/off</button></td>
+        <td><button type="button" onclick="showInbox1()">inbox</button></td>
+        <td><button type="button" onclick="sendMess1()">send</button></td>
+        <td><button type="button" onclick="chargeFunction1()">charge</button></td>
+        <td><button type="button" onclick="showSent1()">sent</button></td>
+    </tr>
+</table>
+<script>
+    class Mobile {
+        constructor(pin, screen) {
+            this.pin = pin;
+            this.screen = screen;
+            this.inbox = [];
+            this.sent = [];
+            this.screenOn = true;
+        }
+        charge() {
+            if (!this.screenOn) {
+                return;
+            }
+            let pinValue = parseInt(this.pin.innerHTML);
+            if(pinValue ==100) {
+                return;
+            } else {
+                pinValue++;
+                this.pin.innerHTML = pinValue;
+            }
+            setTimeout(this.charge.bind(this), 10);
+        }
+        onOfPhone() {
+            if (this.screenOn) {
+                this.screen.style.backgroundColor = "black";
+                this.pin.style.color = "silver"
+                this.screenOn = false;
+                this.screen.value = "";
+            } else {
+                this.screen.style.backgroundColor = "";
+                this.pin.style.color = ""
+                this.screenOn = true;
+                this.screen.value = "";
+            }
+        }
+        setMessage(newmess) {
+            this.screen.value = newmess;
+        }
+        getInbox(newMessage) {
+            if (!this.screenOn) {
+                return;
+            }
+            this.inbox.unshift(newMessage);
+            this.pin.innerHTML -=1;
+        }
+        showInbox() {
+            if (!this.screenOn) {
+                return;
+            }
+            this.screen.value = this.inbox.join(".\n");
+            this.pin.innerHTML -=1;
+        }
+        showSent() {
+            if (!this.screenOn) {
+                return;
+            }
+            this.screen.value = this.sent.join(".\n");
+            this.pin.innerHTML -=1;
+        }
+        sendmessage (tophone) {
+            if (!this.screenOn) {
+                return;
+            }
+            let message = this.screen.value;
+            tophone.setMessage(message);
+            this.sent.unshift(message);
+            tophone.getInbox(message);
+            this.screen.value = "";
+            this.pin.innerHTML -=1;
+        }
+    }
+    const pin1 = document.getElementById("pindisplay1");
+    const pin2 = document.getElementById("pindisplay2");
+    const screen1 = document.getElementById("screen1");
+    const screen2 = document.getElementById("screen2");
+
+    let iphone = new Mobile(pin1, screen1);
+    let samsung = new Mobile(pin2, screen2);
+
+
+    //may 1
+    function chargeFunction() {
+        iphone.charge();
+    }
+    function sendMess() {
+        iphone.sendmessage(samsung);
+    }
+    function showSent() {
+        iphone.showSent();
+    }
+    function showInbox() {
+        iphone.showInbox();
+    }
+    function onoffFunction() {
+        iphone.onOfPhone();
+    }
+
+    //May 2
+    function chargeFunction1() {
+        samsung.charge();
+    }
+    function sendMess1() {
+        samsung.sendmessage(iphone);
+    }
+    function showSent1() {
+        samsung.showSent();
+    }
+    function showInbox1() {
+        samsung.showInbox();
+    }
+    function onoffFunction1() {
+        samsung.onOfPhone();
+    }
+</script>
+</body>
+</html>

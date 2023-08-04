@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>xay dung ung dung quan ly xe may</h2>
+    <button onclick="themXe()">Them xe may</button>
+    <button onclick="xoaXe()">Xoa xe</button>
+    <div id="thongTinXe"></div>
+    <script>
+        class Xe{
+            constructor(bienSoXe,hoTenSV,cmnd,hangXe,phiGuiXe) {
+                this.bienSoXe = bienSoXe
+                this.hoTenSV = hoTenSV
+                this.cmnd = cmnd
+                this.hangXe = hangXe
+                this.phiGuiXe = phiGuiXe
+            }
+            getBxs() {
+                return this.bxs
+            }
+            setBxs(newBxs){
+                return this.bxs = newBxs
+            }
+        }
+        let danhSachXe = []
+        function themXe() {
+            let bienSoXe = prompt("Nhap bien so xe: ")
+            let hoTenSV = prompt("Nhap vao ho ten sinh vien:")
+            let cmnd = +prompt("Nhap vao cmnd:")
+            let hangXe = prompt("Nhap hang xe may (Honda, Yamaha, Sym, Piaggio, Suzuki, Ducati, Hang Khac):");
+            let phiGuiXe = parseInt(prompt("Nhap phi gui xe da dong:"));
+            let hangXeDanhSach = ["Honda","Yamaha","Sym","Piaggio","Suzuki","Ducati",];
+        if (!hangXeDanhSach.includes(hangXe)) {
+        hangXe = "Hang Khac";
+        }
+        let xeMoi = new Xe(bienSoXe, hoTenSV, cmnd, hangXe, phiGuiXe);
+      danhSachXe.push(xeMoi);
+      showInfor()
+    }
+      function showInfor() {
+        let thongTinXeHTML = "<h2>Danh sách xe máy:</h2>";
+            thongTinXeHTML += "<ul>";
+            for (let i = 0; i < danhSachXe.length; i++) {
+        let xe = danhSachXe[i];
+            thongTinXeHTML +="<li>" +
+                "Biển số xe: " +
+                xe.bienSoXe +
+                ", Họ tên sinh viên: " +
+                xe.hoTenSV +
+                ", CMND: " +
+                xe.cmnd +
+                ", Hãng xe: " +
+                xe.hangXe +
+                ", Phí gửi xe đã đóng: " +
+                xe.phiGuiXe +
+                "</li>";
+        }
+        thongTinXeHTML += "</ul>"; 
+        document.getElementById("thongTinXe").innerHTML = thongTinXeHTML;
+      }
+      function xoaXe(){
+        if (confirm("Ban co muon xoa xe?")==true){
+           let bienSoXe = prompt("Nhap vao bien so xe muon xoa: ");
+        }
+      }
+    </script>
+</body>
+</html>
