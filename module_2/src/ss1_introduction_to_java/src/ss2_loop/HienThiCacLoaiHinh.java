@@ -26,8 +26,33 @@ public class HienThiCacLoaiHinh {
                         }
                         System.out.print("\n");
                     }
+                    break;
                 case 2:
                     System.out.println("Nhap vao chieu cao: ");
+                    int h = Integer.parseInt(scanner.nextLine());
+                    for (int i = 0; i < h; i++) {
+                        for (int j = 0; j < i; j++) {
+                            System.out.print("*");
+                        }
+                        System.out.println("*");
+                    }
+                    break;
+                case 3:
+                    System.out.println("Nhap vao chieu cao: ");
+                    int c = Integer.parseInt(scanner.nextLine());
+                    for (int i = c; i > 0; i--) {
+                        for (int j = 0; j < i; j++) {
+                            System.out.print("*");
+                        }
+                        System.out.print("\n");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Ket thuc!");
+                    flag = false;
+                    break;
+                default:
+                    System.out.println("Vui long nhap so tu 1-4");
             }
         }
     }
