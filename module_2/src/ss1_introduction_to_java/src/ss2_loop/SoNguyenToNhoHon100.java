@@ -11,7 +11,7 @@ public class SoNguyenToNhoHon100 {
         int count = 0;
         while (count < a){
             boolean flag = true;
-            if (N>2){
+            if (N>=2){
                 if (N < 100) {
                     for (int i = 2; i < N; i++) {
                         if (N % i == 0) {
