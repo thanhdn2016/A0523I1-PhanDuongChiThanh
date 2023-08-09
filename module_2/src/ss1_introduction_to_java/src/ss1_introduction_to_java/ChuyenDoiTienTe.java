@@ -1,4 +1,4 @@
-package bai_1;
+package ss1_introduction_to_java;
 
 import java.util.Scanner;
 
