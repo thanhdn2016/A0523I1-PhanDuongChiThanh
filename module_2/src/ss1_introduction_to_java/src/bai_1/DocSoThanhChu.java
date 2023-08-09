@@ -1,8 +1,8 @@
-package bai_2;
+package bai_1;
 
 import java.util.Scanner;
 
-public class bai_2 {
+public class DocSoThanhChu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhap vao so can doc: ");

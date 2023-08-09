@@ -1,8 +1,8 @@
-package bai_3;
+package bai_1;
 
 import java.util.Scanner;
 
-public class bai_3 {
+public class ChuyenDoiTienTe {
     public static void main(String[] args) {
         double rate = 23000;
         Scanner scanner = new Scanner(System.in);
