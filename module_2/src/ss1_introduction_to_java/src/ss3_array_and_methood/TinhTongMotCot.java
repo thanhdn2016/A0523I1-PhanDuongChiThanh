@@ -1,5 +1,4 @@
 package ss3_array_and_methood;
-import java.util.Arrays;
 import java.util.Scanner;
 public class TinhTongMotCot {
     public static void main(String[] args) {
@@ -10,7 +9,6 @@ public class TinhTongMotCot {
         int row = Integer.parseInt(scanner.nextLine());
         Float[][] arr = new Float[row][col];
         String str = "";
-        double max = 0;
         for (int i = 0; i < row; i++) {
             str += "[";
             for (int j = 0; j < col; j++) {
