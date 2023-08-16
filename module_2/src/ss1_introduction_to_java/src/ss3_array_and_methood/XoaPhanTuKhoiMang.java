@@ -24,7 +24,6 @@ public class XoaPhanTuKhoiMang {
                         arr[j] = arr[j + 1];
                     }
                     arr[arr.length - 1] = 0;
-                    System.out.println(arr.length + "Test");
                 }
 
                 str2 += arr[i] + ", ";

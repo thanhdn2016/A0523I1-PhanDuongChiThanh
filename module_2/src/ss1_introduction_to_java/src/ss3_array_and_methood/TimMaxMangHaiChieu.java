@@ -1,4 +1,5 @@
 package ss3_array_and_methood;
+import java.time.temporal.ValueRange;
 import java.util.Arrays;
 import java.util.Scanner;
 public class TimMaxMangHaiChieu {
@@ -9,7 +10,7 @@ public class TimMaxMangHaiChieu {
         System.out.print("Nhập vào số hàng(row) của ma trận (arr[row][col]) : ");
         int row = Integer.parseInt(scanner.nextLine());
         Float[][] arr = new Float[row][col];
-        double max =0;
+        double max = Integer.MIN_VALUE;
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
                 System.out.print("Nhập vào phần tử thứ [" + i + "]" + "["+ j +"]"+": ");
