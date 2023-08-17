@@ -25,7 +25,6 @@ public class XoaPhanTuKhoiMang {
                     }
                     arr[arr.length - 1] = 0;
                 }
-
                 str2 += arr[i] + ", ";
             }
             System.out.println("So can xoa cua ban la: " + soCanXoa + "; nam tai vi tri index = " + index);
