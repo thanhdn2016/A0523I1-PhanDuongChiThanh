@@ -1,6 +1,7 @@
 package ss4_class_and_object.stop_watch;
+
 public class StopWatch {
-    private double startTime,endTime;
+    private double startTime, endTime;
     private boolean flag;
 
     public double getStarTime() {
@@ -10,10 +11,12 @@ public class StopWatch {
     public double getEndTime() {
         return endTime;
     }
-    public double starTime(){
-      return this.startTime =  System.currentTimeMillis();
+
+    public double starTime() {
+        return this.startTime = System.currentTimeMillis();
     }
-    public void start(){
+
+    public void start() {
         if (flag) {
             System.out.println("stop watch dang chay");
             return;
@@ -21,18 +24,19 @@ public class StopWatch {
         this.startTime = System.currentTimeMillis();
         flag = true;
         System.out.println("stop watch da bat dau !");
-
     }
-    public void stop(){
+
+    public void stop() {
         if (!flag) {
             System.out.println("stop watch chua chay");
             return;
         }
-         this.endTime = System.currentTimeMillis();
+        this.endTime = System.currentTimeMillis();
         flag = false;
         System.out.println("Stop watch da dung lai!");
     }
-    public double getElapsedTime(){
+
+    public double getElapsedTime() {
         return this.endTime - this.startTime;
     }
 }

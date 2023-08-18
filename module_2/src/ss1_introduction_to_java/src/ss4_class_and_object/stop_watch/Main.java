@@ -22,7 +22,7 @@ public class Main {
                     sw.stop();
                     double time = sw.getElapsedTime();
                     System.out.println("stop watch da dung");
-                    System.out.println("Thoi gian da troi qua la: "+sw.getElapsedTime() + " milisecond");
+                    System.out.println("Thoi gian da troi qua la: " + sw.getElapsedTime() + " milisecond");
                     break;
                 case 3:
                     System.out.println("Thoat stop watch");
@@ -30,6 +30,6 @@ public class Main {
                 case 4:
                     System.out.println("vui long nhap tu 1-3");
             }
-        }while (a!=3);
+        } while (a != 3);
     }
 }

@@ -14,11 +14,11 @@ public class Main {
         c = scanner.nextDouble();
         QuadraticEquation pt1 = new QuadraticEquation(a, b, c);
         if (pt1.getDelta() == 0) {
-            System.out.println("Phuong trinh co nghiem kep la: "+pt1.x1());
+            System.out.println("Phuong trinh co nghiem kep la: " + pt1.x1());
         } else if (pt1.getDelta() > 0) {
             System.out.println("Phuong trinh co hai nghiem phan biet la: ");
-            System.out.print("x1: "+pt1.x1());
-            System.out.print("     x2: "+pt1.x2());
+            System.out.print("x1: " + pt1.x1());
+            System.out.print("     x2: " + pt1.x2());
         } else {
             System.out.println("Phuong Trinh vo nghiem!");
         }
