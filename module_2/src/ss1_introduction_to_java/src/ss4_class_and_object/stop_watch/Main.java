@@ -13,7 +13,6 @@ public class Main {
             System.out.println("2.stop");
             System.out.println("3.thoat");
             a = scanner.nextInt();
-
             switch (a) {
                 case 1:
                     sw.start();
@@ -21,8 +20,7 @@ public class Main {
                 case 2:
                     sw.stop();
                     double time = sw.getElapsedTime();
-                    System.out.println("stop watch da dung");
-                    System.out.println("Thoi gian da troi qua la: " + sw.getElapsedTime() + " milisecond");
+                    System.out.println("Thoi gian da troi qua la: " + time + " milisecond");
                     break;
                 case 3:
                     System.out.println("Thoat stop watch");
