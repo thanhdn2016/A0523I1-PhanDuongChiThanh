@@ -1,8 +1,10 @@
 package ss5_access_modifier_and_static_method;
 
+import java.util.Scanner;
+
 public class Circle {
-    private double radius = 1.0;
-    private String color ="red";
+    public double radius = 1.0;
+    public String color ="red";
     public Circle(){
     }
     public Circle(double radius){
@@ -16,8 +18,11 @@ public class Circle {
     }
 
     public static void main(String[] args) {
-        Circle circle = new Circle();
-        System.out.println(circle.getArea());
-        System.out.println(circle.getRadius());
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhap vao ban kinh(r): ");
+        double r = scanner.nextDouble();
+        Circle circle = new Circle(r);
+        System.out.println("Dien tich hinh tron la: "+circle.getArea());
+        System.out.println("Ban kinh(r) hinh tron la: "+circle.getRadius());
     }
 }
