@@ -1,17 +1,16 @@
-package ss6_inheritance.point2d_and_point3d;
+package ss6_inheritance.point_and_moveablepoint;
 
 import java.util.Arrays;
 
-public class Point2D {
-    float x = 0.0f;
-    float y = 0.0f;
+public class Point {
+    float x, y = 0.0f;
 
-    public Point2D(float x, float y) {
+    public Point(float x, float y) {
         this.x = x;
         this.y = y;
     }
 
-    public Point2D() {
+    public Point() {
     }
 
     public float getX() {
@@ -41,18 +40,19 @@ public class Point2D {
         arr[1] = getY();
         System.out.println(Arrays.toString(arr));
         return arr;
+
     }
 
     @Override
     public String toString() {
-        return "Point2D {" +
+        return "Point {" +
                 "x = " + x +
                 ", y = " + y +
                 '}';
     }
 
     public static void main(String[] args) {
-        Point2D test = new Point2D(2, 3);
+        Point test = new Point(2, 3);
         test.setXY(1, 2);
         test.getXY();
         System.out.println(test.toString());
