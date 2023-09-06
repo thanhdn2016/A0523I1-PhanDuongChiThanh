@@ -24,6 +24,7 @@ public class ProductRepository implements IProductRepository {
     @Override
     public void addProduct(Product product) {
         products.add(product);
+        System.out.println("Da them moi 1 san pham!");
     }
 
     @Override

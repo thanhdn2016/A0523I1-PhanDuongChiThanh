@@ -25,7 +25,6 @@ public class ProductController {
                     break;
                 case 2:
                     productService.add();
-                    System.out.println("Da them moi 1 san pham!");
                     break;
                 case 3:
                     productService.edit();
