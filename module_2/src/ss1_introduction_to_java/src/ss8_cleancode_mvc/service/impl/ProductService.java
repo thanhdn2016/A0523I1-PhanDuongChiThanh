@@ -22,9 +22,9 @@ public class ProductService implements IProductService {
     @Override
     public void add() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhap id: ");
+        System.out.println("Nhap id san pham: ");
         int id = Integer.parseInt(scanner.nextLine());
-        System.out.println("Nhap ten: ");
+        System.out.println("Nhap ten san pham: ");
         String name = scanner.nextLine();
         System.out.println("Nhap gia tien: ");
         double price = Double.parseDouble(scanner.nextLine());
