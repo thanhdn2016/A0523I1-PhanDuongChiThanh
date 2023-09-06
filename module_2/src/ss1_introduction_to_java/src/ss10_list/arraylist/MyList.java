@@ -38,11 +38,17 @@ public class MyList<E> {
         if (size == elements.length) {
             ensureCapa();
         }
-        if (index >= 0 && index < elements.length) {
+        if (index >= 0 && elements[index] != null) {
+            int count = 1 ;
+            for (int i = index + 1; i < elements.length; i++) {
+                    elements[elements.length-count] = elements[elements.length-(count+1)];
+                    count++;
+            }
             elements[index] = element;
             size++;
-        } else {
-            System.out.println("index khong hop le");
+        } else if (index >= 0 && index < elements.length) {
+            elements[index] = element;
+            size++;
         }
     }
 
