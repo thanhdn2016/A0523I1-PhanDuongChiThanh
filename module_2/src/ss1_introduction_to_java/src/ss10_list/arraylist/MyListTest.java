@@ -6,7 +6,7 @@ public class MyListTest {
     private static MyList<MyList> test = new MyList<>(10);
 
     static {
-        test.add(0, "test");
+        test.add(0, 1);
         test.add(1, "test1");
         test.add(2, "test2");
         test.add(3, "test3");
