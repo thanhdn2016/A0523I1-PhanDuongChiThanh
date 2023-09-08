@@ -3,10 +3,10 @@ package ss10_list.arraylist;
 import java.util.Scanner;
 
 public class MyListTest {
-    private static MyList<MyList> test = new MyList<>(10);
+    private static MyList<String> test = new MyList<>(10);
 
     static {
-        test.add(0, 1);
+        test.add(0, "Test");
         test.add(1, "test1");
         test.add(2, "test2");
         test.add(3, "test3");
@@ -32,7 +32,7 @@ public class MyListTest {
                     int index = Integer.parseInt(scanner.nextLine());
                     System.out.print("Nhap noi dung:");
                     Object elements = scanner.nextLine();
-                    test.add(index, elements);
+                    test.add(index, (String) elements);
                     System.out.println(test);
                     System.out.println("Da chen thanh cong");
                     break;

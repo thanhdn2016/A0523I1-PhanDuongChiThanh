@@ -34,7 +34,7 @@ public class MyList<E> {
         return "";
     }
 
-    void add(int index, Object element) {
+     E  add(int index, E element) {
         if (size == elements.length) {
             ensureCapa();
         }
@@ -50,7 +50,8 @@ public class MyList<E> {
             elements[index] = element;
             size++;
         }
-    }
+         return element;
+     }
 
     public E get(int i) {
         if (i >= size || i < 0) {
@@ -68,5 +69,4 @@ public class MyList<E> {
         size--;
         return element;
     }
-
 }
