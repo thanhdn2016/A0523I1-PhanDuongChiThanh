@@ -50,7 +50,7 @@ public class Product implements Comparable<Product> {
 
     @Override
     public int compareTo(Product o) {
-            return o.getPrice()-this.price;
+            return this.id-o.getId();
     }
 
 }

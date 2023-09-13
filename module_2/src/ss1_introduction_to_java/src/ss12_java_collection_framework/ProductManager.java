@@ -9,10 +9,10 @@ public class ProductManager {
     private static ArrayList<Product> products = new ArrayList<>();
 
     static {
-        products.add(new Product(1, "Xe May", 1000000));
-        products.add(new Product(2, "Trung ga", 2000));
-        products.add(new Product(3, "iphone", 1550000));
-        products.add(new Product(4, "gau bong", 155000));
+        products.add(new Product(5, "Xe May", 1000000));
+        products.add(new Product(6, "Trung ga", 2000));
+        products.add(new Product(7, "iphone", 1550000));
+        products.add(new Product(8, "gau bong", 155000));
     }
 
     public void add() {
@@ -48,20 +48,26 @@ public class ProductManager {
     }
 
     public void editById() {
+        int id;
+        int existItemIndex = 0;
         System.out.println("Nhap vao id san pham can sua");
-        int id = Integer.parseInt(scanner.nextLine());
+        id = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < products.size(); i++) {
             if (id == products.get(i).getId()) {
-                System.out.println("Nhap ten moi cua san pham: ");
-                String newName = scanner.nextLine();
-                System.out.println("Nhap gia tien moi cua san pham: ");
-                int newPrice = Integer.parseInt(scanner.nextLine());
-                products.get(i).setNameProduct(newName);
-                products.get(i).setPrice(newPrice);
+                existItemIndex = i;
+                break;
             }
         }
-        System.out.println("Da sua thanh cong!");
-        display();
+        if (id == products.get(existItemIndex).getId()) {
+            System.out.println("Nhap ten moi cua san pham: ");
+            String newName = scanner.nextLine();
+            System.out.println("Nhap gia tien moi cua san pham: ");
+            int newPrice = Integer.parseInt(scanner.nextLine());
+            products.get(existItemIndex).setNameProduct(newName);
+            products.get(existItemIndex).setPrice(newPrice);
+        } else {
+            System.out.println("ID khong ton tai");
+        }
     }
 
     public void deleteById() {
@@ -96,13 +102,18 @@ public class ProductManager {
         }
     }
 
-    public ArrayList<Product> sortByPrice() {
+    public ArrayList<Product> sortByID() {
         Collections.sort(products);
         return products;
     }
 
     public ArrayList<Product> sortLowToHighPrice() {
         Collections.sort(products, new CompareLowToHigh());
+        return products;
+    }
+
+    public ArrayList<Product> sortHighToLowPrice() {
+        Collections.sort(products, new CompareHighToLow());
         return products;
     }
 }

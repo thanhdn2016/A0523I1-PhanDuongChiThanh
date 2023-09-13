@@ -14,10 +14,11 @@ public class Main {
                     "\n2.Them san pham" +
                     "\n3.Sua san pham theo id" +
                     "\n4.Xoa san pham theo id" +
-                    "\n5.Tim kiem theo ten" +
+                    "\n5.Tim kiem theo ten hoac ID" +
                     "\n6.Sap xep san pham tang dan theo gia" +
                     "\n7.Sap xep san pham giam dan theo gia" +
-                    "\n8.Exit");
+                    "\n8.Sap xep san pham theo ID" +
+                    "\n9.Exit");
             int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
@@ -40,7 +41,11 @@ public class Main {
                    productManager.display();
                     break;
                 case 7:
-                    productManager.sortByPrice();
+                    productManager.sortHighToLowPrice();
+                    productManager.display();
+                    break;
+                case 8:
+                    productManager.sortByID();
                     productManager.display();
                     break;
                 default:
