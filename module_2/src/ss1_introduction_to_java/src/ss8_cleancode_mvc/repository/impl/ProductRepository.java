@@ -1,7 +1,7 @@
-package ss8_cleancode_mvc.reponsitory.impl;
+package ss8_cleancode_mvc.repository.impl;
 
 import ss8_cleancode_mvc.model.Product;
-import ss8_cleancode_mvc.reponsitory.IProductRepository;
+import ss8_cleancode_mvc.repository.IProductRepository;
 
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package ss8_cleancode_mvc.reponsitory;
+package ss8_cleancode_mvc.repository;
 
 import ss8_cleancode_mvc.model.Product;
 
