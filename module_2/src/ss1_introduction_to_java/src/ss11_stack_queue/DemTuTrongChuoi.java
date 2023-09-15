@@ -12,9 +12,9 @@ public class DemTuTrongChuoi {
         int count = 0;
         System.out.println("Nhap vao 1 chuoi: ");
         String str = scanner.nextLine();
-        String newStr = str.toLowerCase();
-        System.out.println(newStr);
-        for (String w : newStr.split("\\s", 0)) {
+         str = str.toLowerCase();
+        System.out.println(str);
+        for (String w : str.split("\\s", 0)) {
             if (stringMap.containsKey(w)) {
                 count = stringMap.get(w);
                 stringMap.put(w, count + 1);
