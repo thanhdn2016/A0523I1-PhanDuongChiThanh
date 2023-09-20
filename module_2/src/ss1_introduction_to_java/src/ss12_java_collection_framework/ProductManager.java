@@ -76,9 +76,13 @@ public class ProductManager {
         for (int i = 0; i < products.size(); i++) {
             if (deleteId == products.get(i).getId()) {
                 products.remove(i);
+                System.out.println("Da xoa 1 san pham!");
+                return;
+            } else {
+                System.out.println("ID khong ton tai");
+                break;
             }
         }
-        System.out.println("Da xoa 1 san pham!");
     }
 
     public void find() {
