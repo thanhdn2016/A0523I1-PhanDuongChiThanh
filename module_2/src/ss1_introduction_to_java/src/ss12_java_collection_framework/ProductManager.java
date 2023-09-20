@@ -71,19 +71,25 @@ public class ProductManager {
     }
 
     public void deleteById() {
+        int existItemIndex = 0;
+        int deleteId;
         System.out.print("Nhap vao id cua san pham can xoa: ");
-        int deleteId = Integer.parseInt(scanner.nextLine());
+         deleteId = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < products.size(); i++) {
             if (deleteId == products.get(i).getId()) {
-                products.remove(i);
-                System.out.println("Da xoa 1 san pham!");
-                return;
-            } else {
-                System.out.println("ID khong ton tai");
+                existItemIndex = i;
                 break;
             }
         }
-    }
+        if (deleteId == products.get(existItemIndex).getId()) {
+            products.remove(existItemIndex);
+            System.out.println("Da xoa 1 san pham!");
+        }
+            else {
+                System.out.println("ID khong ton tai");
+            }
+        }
+
 
     public void find() {
         System.out.println("Nhap ten hoac ID san pham can tim: ");
