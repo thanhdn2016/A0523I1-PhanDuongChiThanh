@@ -1,18 +1,20 @@
 package ss_case_study.model;
 
+import java.util.Date;
+
 public class Booking {
     private int bookingCode, customerCode, serviceCode;
-    private String bookingDay, starRent, endRent;
+    private Date bookingDay, startRent, endRent;
 
     public Booking() {
     }
 
-    public Booking(int bookingCode, int customerCode, int serviceCode, String bookingDay, String starRent, String endRent) {
+    public Booking(int bookingCode, int customerCode, int serviceCode, Date bookingDay, Date startRent, Date endRent) {
         this.bookingCode = bookingCode;
         this.customerCode = customerCode;
         this.serviceCode = serviceCode;
         this.bookingDay = bookingDay;
-        this.starRent = starRent;
+        this.startRent = startRent;
         this.endRent = endRent;
     }
 
@@ -40,27 +42,27 @@ public class Booking {
         this.serviceCode = serviceCode;
     }
 
-    public String getBookingDay() {
+    public Date getBookingDay() {
         return bookingDay;
     }
 
-    public void setBookingDay(String bookingDay) {
+    public void setBookingDay(Date bookingDay) {
         this.bookingDay = bookingDay;
     }
 
-    public String getStarRent() {
-        return starRent;
+    public Date getStarRent() {
+        return startRent;
     }
 
-    public void setStarRent(String starRent) {
-        this.starRent = starRent;
+    public void setStarRent(Date starRent) {
+        this.startRent = starRent;
     }
 
-    public String getEndRent() {
+    public Date getEndRent() {
         return endRent;
     }
 
-    public void setEndRent(String endRent) {
+    public void setEndRent(Date endRent) {
         this.endRent = endRent;
     }
 }

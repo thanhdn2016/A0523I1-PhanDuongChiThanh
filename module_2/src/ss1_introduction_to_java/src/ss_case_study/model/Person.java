@@ -1,8 +1,11 @@
 package ss_case_study.model;
 
+import java.util.Date;
+
 abstract class Person {
     private int id, phoneNumber;
-    private String fullName, gender, email, dayOfBirth;
+    private String fullName, gender, email;
+    private Date dayOfBirth;
 
 
     public int getId() {
@@ -45,15 +48,15 @@ abstract class Person {
         this.email = email;
     }
 
-    public String getDayOfBirth() {
+    public Date getDayOfBirth() {
         return dayOfBirth;
     }
 
-    public void setDayOfBirth(String dayOfBirth) {
+    public void setDayOfBirth(Date dayOfBirth) {
         this.dayOfBirth = dayOfBirth;
     }
 
-    public Person(int id, int phoneNumber, String fullName, String gender, String email, String dayOfBirth) {
+    public Person(int id, int phoneNumber, String fullName, String gender, String email, Date dayOfBirth) {
         this.id = id;
         this.phoneNumber = phoneNumber;
         this.fullName = fullName;

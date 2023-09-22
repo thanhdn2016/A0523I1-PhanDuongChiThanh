@@ -1,9 +1,11 @@
 package ss_case_study.model;
 
+import java.util.Date;
+
 public class Employee extends Person {
     private String position, qualification;
     private int employeeCode,salary;
-    public Employee(int employeeCode, int id, int phoneNumber, int salary, String fullName, String gender, String email, String dayOfBirth, String position, String qualification) {
+    public Employee(int employeeCode, int id, int phoneNumber, int salary, String fullName, String gender, String email, Date dayOfBirth, String position, String qualification) {
         super(id, phoneNumber, fullName, gender, email, dayOfBirth);
         this.salary = salary;
         this.employeeCode = employeeCode;
