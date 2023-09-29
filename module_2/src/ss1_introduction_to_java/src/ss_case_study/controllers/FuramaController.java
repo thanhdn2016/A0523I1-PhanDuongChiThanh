@@ -14,7 +14,20 @@ public class FuramaController {
                     "\n" + "4. Booking Management" +
                     "\n" + "5. Promotion Management" +
                     "\n" + "6. Exit");
-            int choose = Integer.parseInt(scanner.nextLine());
+            int choose = -1;
+            boolean chooseFlag = true;
+            do {
+                chooseFlag = false;
+                try {
+                    choose = Integer.parseInt(scanner.nextLine());
+                    if (choose > 6 || choose < 0) {
+                        chooseFlag = true;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    chooseFlag = true;
+                }
+            } while (chooseFlag);
             switch (choose) {
                 case 1:
                     EmployeeController.displayEmployeeMenu();
@@ -30,8 +43,11 @@ public class FuramaController {
                     break;
                 case 5:
                     PromotionController.displayPromotionMenu();
-                default:
+                    break;
+                case 6:
                     flag = false;
+                default:
+                    System.out.println("ban da nhap ngoai pham vi - vui long nhap lai");
             }
         } while (flag);
     }

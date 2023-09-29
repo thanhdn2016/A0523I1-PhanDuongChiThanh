@@ -4,8 +4,9 @@ import java.util.Date;
 
 public class Employee extends Person {
     private String position, qualification;
-    private int employeeCode,salary;
-    public Employee(int employeeCode, int id, int phoneNumber, int salary, String fullName, String gender, String email, Date dayOfBirth, String position, String qualification) {
+    private int employeeCode, salary;
+
+    public Employee(int employeeCode, int id, String phoneNumber, int salary, String fullName, String gender, String email, String dayOfBirth, String position, String qualification) {
         super(id, phoneNumber, fullName, gender, email, dayOfBirth);
         this.salary = salary;
         this.employeeCode = employeeCode;
@@ -44,4 +45,22 @@ public class Employee extends Person {
     public void setQualification(String qualification) {
         this.qualification = qualification;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeCode = " + employeeCode +
+                ", " +
+                "id ='" + getId() + '\'' +
+                "phoneNumber = '" + getPhoneNumber() + '\'' +
+                ", salary = " + salary +
+                ", fullName = " + getFullName() +
+                ", gender = " + getGender() +
+                ", email = " + getEmail() +
+                ", dayOfBirth = " + getDayOfBirth() +
+                ", position = '" + position + '\'' +
+                ", qualification = '" + qualification + '\'' +
+                '}';
+    }
+
 }

@@ -1,9 +1,12 @@
 package ss_case_study.controllers;
 
+import ss_case_study.repository.impl.EmployeeRepository;
+
 import java.util.Scanner;
 
 public class EmployeeController {
     public static void displayEmployeeMenu(){
+        EmployeeRepository employeeRepository = new EmployeeRepository();
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;
         int choose;
@@ -15,11 +18,11 @@ public class EmployeeController {
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1: {
-                    System.out.println("code chuc nang display list employees");
+                    EmployeeRepository.displayEmployeeList();
                     break;
                 }
                 case 2: {
-                    System.out.println("code chuc nang them moi employees");
+                    employeeRepository.addEmployee();
                     break;
                 }
                 case 3: {

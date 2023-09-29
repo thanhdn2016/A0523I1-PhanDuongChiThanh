@@ -7,6 +7,18 @@ abstract class Facility {
     public Facility() {
     }
 
+    @Override
+    public String toString() {
+        return "Facility{" +
+                "serviceCode=" + serviceCode +
+                ", rentCost=" + rentCost +
+                ", maxPeople=" + maxPeople +
+                ", useArea=" + useArea +
+                ", rentType='" + rentType + '\'' +
+                ", serviceName='" + serviceName + '\'' +
+                '}';
+    }
+
     public int getServiceCode() {
         return serviceCode;
     }

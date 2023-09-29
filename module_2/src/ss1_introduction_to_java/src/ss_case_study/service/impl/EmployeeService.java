@@ -1,8 +1,18 @@
 package ss_case_study.service.impl;
 
-import ss_case_study.service.IService;
+import ss_case_study.service.IEmployeeService;
 
-public class FuramaService implements IService {
+public class EmployeeService implements IEmployeeService {
+    @Override
+    public void promoteToPosition(String newPosition) {
+
+    }
+
+    @Override
+    public void increaseSalary(double amount) {
+
+    }
+
     @Override
     public double calculateTotalCost() {
         return 0;
