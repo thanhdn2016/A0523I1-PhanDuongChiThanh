@@ -1,12 +1,14 @@
 package ss_case_study.controllers;
 
 import ss_case_study.repository.impl.EmployeeRepository;
+import ss_case_study.service.impl.EmployeeService;
 
 import java.util.Scanner;
 
 public class EmployeeController {
     public static void displayEmployeeMenu(){
         EmployeeRepository employeeRepository = new EmployeeRepository();
+        EmployeeService employeeService = new EmployeeService();
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;
         int choose;
@@ -18,7 +20,7 @@ public class EmployeeController {
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1: {
-                    EmployeeRepository.displayEmployeeList();
+                    employeeRepository.displayEmployeeList();
                     break;
                 }
                 case 2: {
@@ -26,7 +28,7 @@ public class EmployeeController {
                     break;
                 }
                 case 3: {
-                    System.out.println("code chuc nang edit employee");
+                    employeeService.edit();
                     break;
                 }
                 default:

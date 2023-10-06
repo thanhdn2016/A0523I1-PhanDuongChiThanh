@@ -46,6 +46,7 @@ public class FuramaController {
                     break;
                 case 6:
                     flag = false;
+                    break;
                 default:
                     System.out.println("ban da nhap ngoai pham vi - vui long nhap lai");
             }

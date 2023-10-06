@@ -3,10 +3,10 @@ package ss_case_study.model;
 import java.util.Date;
 
 public class Employee extends Person {
-    private String position, qualification;
-    private int employeeCode, salary;
+    private String position, qualification, employeeCode;
+    private int  salary;
 
-    public Employee(int employeeCode, int id, String phoneNumber, int salary, String fullName, String gender, String email, String dayOfBirth, String position, String qualification) {
+    public Employee( int id,String employeeCode, String phoneNumber, int salary, String fullName, String gender, String email, String dayOfBirth, String position, String qualification) {
         super(id, phoneNumber, fullName, gender, email, dayOfBirth);
         this.salary = salary;
         this.employeeCode = employeeCode;
@@ -14,11 +14,11 @@ public class Employee extends Person {
         this.qualification = qualification;
     }
 
-    public int getEmployeeCode() {
+    public String getEmployeeCode() {
         return employeeCode;
     }
 
-    public void setEmployeeCode(int employeeCode) {
+    public void setEmployeeCode(String employeeCode) {
         this.employeeCode = employeeCode;
     }
 
@@ -63,4 +63,9 @@ public class Employee extends Person {
                 '}';
     }
 
+    public String getInfoToCSV() {
+        return getId() + ", " + getEmployeeCode() + ", " + getPhoneNumber() + ", " +
+                getSalary() + ", " + getFullName() + ", " + getGender() + ", " +
+                getEmail() + ", " + getDayOfBirth() + ", " + getPosition() + ", " + getQualification();
+    }
 }
