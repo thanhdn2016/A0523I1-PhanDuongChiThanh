@@ -14,8 +14,5 @@ public class CustomerRepository implements ICustomerRepository {
         customerType.add("Member");
     }
 
-    @Override
-    public boolean checkDayOfBirth(String dayOfBirth) {
-        return false;
-    }
+
 }
