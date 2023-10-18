@@ -47,6 +47,7 @@ public class EmployeeRepository implements IEmployeeRepository {
     public final String PATH_POSITION = "/Users/thanh/Desktop/codegym/A0523I1-PhanDuongChiThanh/module_2/src/ss1_introduction_to_java/src/ss_case_study/data/position.csv";
     public final String PATH_QUALIFICATION = "/Users/thanh/Desktop/codegym/A0523I1-PhanDuongChiThanh/module_2/src/ss1_introduction_to_java/src/ss_case_study/data/qualification.csv";
 
+    @Override
     public void addEmployee(int id, String employeeCode, String phoneNumber, int salary, String fullName, String gender, String email, String dateOfBirth, int position, int qualification) {
         employeeList.add(new Employee(id, employeeCode, phoneNumber, salary, fullName, gender, email, dateOfBirth, getListPosition().get(position), getListQualification().get(qualification)));
         for (Employee e : employeeList) {
@@ -55,6 +56,7 @@ public class EmployeeRepository implements IEmployeeRepository {
         ReadAndWrite.writeToCSV(PATH_EMPLOYEE, stringList, false);
     }
 
+    @Override
     public List<Employee> displayEmployeeList() {
         for (Employee e : getListEmployee()) {
             System.out.println(e);
@@ -82,17 +84,28 @@ public class EmployeeRepository implements IEmployeeRepository {
         ReadAndWrite.writeToCSV(PATH_EMPLOYEE, stringList, false);
     }
 
-    public void deleteById(int id) {
+    @Override
+    public void deleteById(int deleteId) {
+        int existId = 0;
         for (int i = 0; i < employeeList.size(); i++) {
-            if (id == employeeList.get(i).getId()) {
-                employeeList.remove(i);
+            if (deleteId == employeeList.get(i).getId()) {
+                existId = i;
                 break;
             }
         }
-        for (Employee e : employeeList) {
-            stringList.add(e.getInfoToCSV());
+        if (deleteId == employeeList.get(existId).getId()){
+            employeeList.remove(existId);
+            System.out.println("Da xoa 1 employee!");
+            stringList.clear();
+            for (Employee e : employeeList) {
+                stringList.add(e.getInfoToCSV());
+            }
+            ReadAndWrite.writeToCSV(PATH_EMPLOYEE, stringList, false);
         }
-        ReadAndWrite.writeToCSV(PATH_EMPLOYEE, stringList, false);
+        else {
+            System.out.println("ID khong ton tai");
+        }
+
     }
 }
 

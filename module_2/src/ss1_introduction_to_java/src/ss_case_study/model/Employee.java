@@ -54,7 +54,7 @@ public class Employee extends Person {
                 "id ='" + getId() + '\'' +
                 "phoneNumber = '" + getPhoneNumber() + '\'' +
                 ", salary = " + salary +
-                ", fullName = " + getFullName() +
+                ", fullName = '" + getFullName() + '\''+
                 ", gender = " + getGender() +
                 ", email = " + getEmail() +
                 ", dayOfBirth = " + getDayOfBirth() +

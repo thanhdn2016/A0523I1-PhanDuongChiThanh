@@ -3,6 +3,17 @@ package ss_case_study.service;
 import java.util.Date;
 
 public interface IEmployeeService extends IService {
-    void promoteToPosition(String newPosition);
-    void increaseSalary(double amount);
+    void add();
+
+    void edit();
+
+    void delete();
+
+    boolean checkEmployeeCode(String employeeCode);
+
+    boolean checkPhoneNumber(String phoneNumber);
+
+    StringBuilder capitalizedName(String name);
+
+    boolean checkDayOfBirth(String dayOfBirth);
 }

@@ -1,4 +1,5 @@
 package ss_case_study.service.impl;
+
 import ss_case_study.repository.impl.EmployeeRepository;
 import ss_case_study.service.IEmployeeService;
 
@@ -8,36 +9,8 @@ import java.util.Scanner;
 public class EmployeeService implements IEmployeeService {
     EmployeeRepository employeeRepository = new EmployeeRepository();
     Scanner scanner = new Scanner(System.in);
-    @Override
-    public void promoteToPosition(String newPosition) {
-
-    }
 
     @Override
-    public void increaseSalary(double amount) {
-
-    }
-
-    @Override
-    public double calculateTotalCost() {
-        return 0;
-    }
-
-    @Override
-    public boolean isAvailable() {
-        return false;
-    }
-
-    @Override
-    public boolean isSuitableForGuests() {
-        return false;
-    }
-
-    @Override
-    public void updateServiceInfo() {
-
-    }
-
     public void add() {
         int id = 0;
         int salary;
@@ -148,13 +121,14 @@ public class EmployeeService implements IEmployeeService {
         employeeRepository.addEmployee(id, employeeCode, phoneNumber, salary, fullName, gender, email, dateOfBirth, position, qualification);
     }
 
+    @Override
     public void edit() {
         int existIndex = 0;
         int newSalary, id;
         int position = -1;
         int qualification = -1;
         String newPhoneNumber, newFullname, newGender, newEmail, newDateOfBirth, newEmployeeCode;
-        System.out.println("Nhap vao id employee can sua");
+        System.out.print("Nhap vao id employee can sua");
         id = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < employeeRepository.getListEmployee().size(); i++) {
             if (id == employeeRepository.getListEmployee().get(i).getId()) {
@@ -231,11 +205,15 @@ public class EmployeeService implements IEmployeeService {
             System.out.println("id khong ton tai");
         }
     }
-        public void delete(){
-            System.out.print("Nhap vao id cua employee ban muon xoa: ");
-            int id = Integer.parseInt(scanner.nextLine());
-            employeeRepository.deleteById(id);
-        }
+
+    @Override
+    public void delete() {
+        System.out.print("Nhap vao id cua employee ban muon xoa: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        employeeRepository.deleteById(id);
+    }
+
+    @Override
     public boolean checkEmployeeCode(String employeeCode) {
         String regex = "^(NV)\\-\\d{4}$";
         if (employeeCode.matches(regex)) {
@@ -246,6 +224,7 @@ public class EmployeeService implements IEmployeeService {
         }
     }
 
+    @Override
     public boolean checkPhoneNumber(String phoneNumber) {
         String regex = "^(\\(\\+84\\)|0)\\d{9}$";
         if (phoneNumber.matches(regex)) {
@@ -257,6 +236,7 @@ public class EmployeeService implements IEmployeeService {
         }
     }
 
+    @Override
     public StringBuilder capitalizedName(String name) {
         name = name.toLowerCase();
         String[] arr = name.split("\\s+");
@@ -270,6 +250,7 @@ public class EmployeeService implements IEmployeeService {
         return capitalized;
     }
 
+    @Override
     public boolean checkDayOfBirth(String dayOfBirth) {
         String[] arr = dayOfBirth.split("/");
         if (arr.length == 3) {
