@@ -1,9 +1,12 @@
 package ss_case_study.controllers;
 
+import ss_case_study.repository.impl.FacilityRepository;
+
 import java.util.Scanner;
 
 public class FacilityController {
     public static void displayFacilityMenu() {
+        FacilityRepository facilityRepository = new FacilityRepository();
         Scanner scanner = new Scanner(System.in);
         int choose;
         boolean flag = true;
@@ -15,7 +18,7 @@ public class FacilityController {
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
-                    System.out.println("code chuc nang hien thi facility");
+                    facilityRepository.displayVilla();
                     break;
                 case 2:
                     System.out.println("code chuc nang them moi");

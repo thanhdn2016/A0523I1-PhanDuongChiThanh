@@ -1,29 +1,30 @@
 package ss_case_study.model;
 
 abstract class Facility {
-    private int serviceCode, rentCost, maxPeople, useArea;
-    private String rentType, serviceName;
+    private int rentCost, maxPeople ;
+    private float useArea;
+    private String rentType, serviceName, serviceCode;
 
     public Facility() {
     }
 
     @Override
     public String toString() {
-        return "Facility{" +
-                "serviceCode=" + serviceCode +
-                ", rentCost=" + rentCost +
-                ", maxPeople=" + maxPeople +
-                ", useArea=" + useArea +
-                ", rentType='" + rentType + '\'' +
-                ", serviceName='" + serviceName + '\'' +
+        return "Facility {" +
+                "serviceCode = '" + serviceCode + '\''+
+                ", rentCost = " + rentCost +
+                ", maxPeople = " + maxPeople +
+                ", useArea = " + useArea + "m²" +
+                ", rentType = '" + rentType + '\'' +
+                ", serviceName = '" + serviceName + '\'' +
                 '}';
     }
 
-    public int getServiceCode() {
+    public String getServiceCode() {
         return serviceCode;
     }
 
-    public void setServiceCode(int serviceCode) {
+    public void setServiceCode(String serviceCode) {
         this.serviceCode = serviceCode;
     }
 
@@ -43,11 +44,11 @@ abstract class Facility {
         this.maxPeople = maxPeople;
     }
 
-    public int getUseArea() {
+    public float getUseArea() {
         return useArea;
     }
 
-    public void setUseArea(int useArea) {
+    public void setUseArea(float useArea) {
         this.useArea = useArea;
     }
 
@@ -67,7 +68,7 @@ abstract class Facility {
         this.serviceName = serviceName;
     }
 
-    public Facility(int serviceCode, int rentCost, int maxPeople, int useArea, String rentType, String serviceName) {
+    public Facility(String serviceCode, int rentCost, int maxPeople, float useArea, String rentType, String serviceName) {
         this.serviceCode = serviceCode;
         this.rentCost = rentCost;
         this.maxPeople = maxPeople;

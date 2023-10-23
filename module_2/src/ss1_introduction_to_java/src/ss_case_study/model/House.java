@@ -9,7 +9,21 @@ public class House extends Facility {
         this.floor = floor;
     }
 
-    public House(int serviceCode, int rentCost, int maxPeople, int useArea, String rentType, String serviceName, String roomStandard, int floor) {
+    @Override
+    public String toString() {
+        return "House { " +
+                "serviceCode = '" + getServiceCode() + '\''+
+                ", rentCost = " + getRentCost() +
+                ", maxPeople = " + getMaxPeople() +
+                ", useArea = " + getUseArea() + "m²" +
+                ", rentType = '" + getRentType() + '\'' +
+                ", serviceName = '" + getServiceName() + '\'' +
+                "roomStandard = '" + roomStandard + '\'' +
+                ", floor = " + floor +
+                '}';
+    }
+
+    public House(String serviceCode, int rentCost, int maxPeople, float useArea, String rentType, String serviceName, String roomStandard, int floor) {
         super(serviceCode, rentCost, maxPeople, useArea, rentType, serviceName);
         this.roomStandard = roomStandard;
         this.floor = floor;
