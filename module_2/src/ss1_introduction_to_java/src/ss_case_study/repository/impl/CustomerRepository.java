@@ -1,9 +1,8 @@
 package ss_case_study.repository.impl;
 
 import ss_case_study.model.Customer;
-import ss_case_study.model.Employee;
 import ss_case_study.repository.ICustomerRepository;
-import ss_case_study.util.ReadAndWrite;
+import final_exam.util.ReadAndWrite;
 
 import java.util.ArrayList;
 import java.util.List;
