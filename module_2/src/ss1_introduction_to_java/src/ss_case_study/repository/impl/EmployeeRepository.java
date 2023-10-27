@@ -2,7 +2,7 @@ package ss_case_study.repository.impl;
 
 import ss_case_study.model.Employee;
 import ss_case_study.repository.IEmployeeRepository;
-import final_exam.util.ReadAndWrite;
+import ss_final_exam.util.ReadAndWrite;
 
 import java.util.ArrayList;
 import java.util.List;
