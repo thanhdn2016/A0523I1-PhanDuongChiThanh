@@ -1,41 +1,40 @@
 USE QuanLySinhVien;
-CREATE TABLE Class
-(
-    ClassID   INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE Class (
+    ClassID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     ClassName VARCHAR(60) NOT NULL,
-    StartDate DATETIME    NOT NULL,
-    Status    BIT
+    StartDate DATETIME NOT NULL,
+    Status BIT
 );
 
-CREATE TABLE Student
-(
-    StudentId   INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE Student (
+    StudentId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     StudentName VARCHAR(30) NOT NULL,
-    Address     VARCHAR(50),
-    Phone       VARCHAR(20),
-    Status      BIT,
-    ClassId     INT         NOT NULL,
-    FOREIGN KEY (ClassId) REFERENCES Class (ClassID)
+    Address VARCHAR(50),
+    Phone VARCHAR(20),
+    Status BIT,
+    ClassId INT NOT NULL,
+    FOREIGN KEY (ClassId)
+        REFERENCES Class (ClassID)
 );
 
-CREATE TABLE `Subject`
-(
-    SubId   INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE `Subject` (
+    SubId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     SubName VARCHAR(30) NOT NULL,
-    Credit  TINYINT     NOT NULL DEFAULT 1 CHECK ( Credit >= 1 ),
-    Status  BIT                  DEFAULT 1
+    Credit TINYINT NOT NULL DEFAULT 1 CHECK (Credit >= 1),
+    Status BIT DEFAULT 1
 );
 
-CREATE TABLE Mark
-(
-    MarkId    INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    SubId     INT NOT NULL,
+CREATE TABLE Mark (
+    MarkId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    SubId INT NOT NULL,
     StudentId INT NOT NULL,
-    Mark      FLOAT   DEFAULT 0 CHECK ( Mark BETWEEN 0 AND 100),
+    Mark FLOAT DEFAULT 0 CHECK (Mark BETWEEN 0 AND 100),
     ExamTimes TINYINT DEFAULT 1,
-    UNIQUE (SubId, StudentId),
-    FOREIGN KEY (SubId) REFERENCES Subject (SubId),
-    FOREIGN KEY (StudentId) REFERENCES Student (StudentId)
+    UNIQUE (SubId , StudentId),
+    FOREIGN KEY (SubId)
+        REFERENCES Subject (SubId),
+    FOREIGN KEY (StudentId)
+        REFERENCES Student (StudentId)
 );
 
 use QuanLySinhVien;
@@ -65,19 +64,48 @@ VALUES (1, 1, 8, 1),
        (2, 1, 12, 1);
        
        
-select * from Student where substring_index(StudentName, " ", -1) like "h%";
-select s.* from Student s where StudentName like 'm%';
+SELECT 
+    *
+FROM
+    Student
+WHERE
+    SUBSTRING_INDEX(StudentName, ' ', - 1) LIKE 'h%';
+SELECT 
+    s.*
+FROM
+    Student s
+WHERE
+    StudentName LIKE 'm%';
 
-select * from Class where month(StartDate)=12;
+SELECT 
+    *
+FROM
+    Class
+WHERE
+    MONTH(StartDate) = 12;
 
-select * from Subject  where Credit >=3 and Credit <=5;
+SELECT 
+    *
+FROM
+    Subject
+WHERE
+    Credit >= 3 AND Credit <= 5;
 
-update Student set ClassID=2 where(StudentID=1);
+UPDATE Student 
+SET 
+    ClassID = 2
+WHERE
+    (StudentID = 1);
 
-select s.StudentName, sub.SubName , m.Mark from Student s 
-join Mark m on  s.StudentID = m.StudentId
-join Subject sub on sub.SubId = m.SubId
-order by m.Mark desc , s.StudentName asc;
+SELECT 
+    s.StudentName, sub.SubName, m.Mark
+FROM
+    Student s
+        JOIN
+    Mark m ON s.StudentID = m.StudentId
+        JOIN
+    Subject sub ON sub.SubId = m.SubId
+ORDER BY m.Mark DESC , s.StudentName ASC;
 
 
        
