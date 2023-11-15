@@ -31,8 +31,48 @@ insert into oder_detail(oID,pID,odQTY) values ('3','1','8');
 insert into oder_detail(oID,pID,odQTY) values ('2','5','4');
 insert into oder_detail(oID,pID,odQTY) values ('2','3','3');
 
-select * from oder;
-select co.cID, co.customer_name, co.oID, po.pID, po.pName, po.pPrice, po.odQTY from (select cID, c.cName as customer_name, oID from oder join customer c using(cID)) as co join (select * from oder_detail join product p using (pid)) as po using(oID);
-select cID , cName from customer where cID not in (select cID from oder);
-select oID, oDate, sum(op.odQTY * op.pPrice) as total_price from oder  join (select oID, pID , odQTY, p.pName, p.pPrice from oder_detail join product p using (pID)) op using (oID) group by oID;	
+SELECT 
+    *
+FROM
+    oder;
+SELECT 
+    co.cID,
+    co.customer_name,
+    co.oID,
+    po.pID,
+    po.pName,
+    po.pPrice,
+    po.odQTY
+FROM
+    (SELECT 
+        cID, c.cName AS customer_name, oID
+    FROM
+        oder
+    JOIN customer c USING (cID)) AS co
+        JOIN
+    (SELECT 
+        *
+    FROM
+        oder_detail
+    JOIN product p USING (pid)) AS po USING (oID);
+SELECT 
+    cID, cName
+FROM
+    customer
+WHERE
+    cID NOT IN (SELECT 
+            cID
+        FROM
+            oder);
+SELECT 
+    oID, oDate, SUM(op.odQTY * op.pPrice) AS total_price
+FROM
+    oder
+        JOIN
+    (SELECT 
+        oID, pID, odQTY, p.pName, p.pPrice
+    FROM
+        oder_detail
+    JOIN product p USING (pID)) op USING (oID)
+GROUP BY oID;	
 
