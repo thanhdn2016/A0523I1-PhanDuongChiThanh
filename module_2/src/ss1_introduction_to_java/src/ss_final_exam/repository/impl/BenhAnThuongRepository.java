@@ -13,7 +13,7 @@ public class BenhAnThuongRepository implements IRepository {
     List<BenhAnThuong> benhAnThuongList = getListBenhAnThuong();
     List<String> stringList = new ArrayList<>();
     int soThuTu;
-    public final String PATH_FILE = "/Users/thanh/Desktop/codegym/A0523I1-PhanDuongChiThanh/module_2/src/ss1_introduction_to_java/src/ss_final_exam/data/medical_records.csv";
+    public final String PATH_FILE = "C:/Users/cudo2/IdeaProjects/A0523I1-PhanDuongChiThanh/module_2/src/ss1_introduction_to_java/src/ss_final_exam/data/medical_records.csv";
     public List<BenhAnThuong> getListBenhAnThuong() {
         List<BenhAnThuong> benhAnThuongList = new ArrayList<>();
         List<String> stringList = ReadAndWrite.readCSVFile(PATH_FILE);
